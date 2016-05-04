@@ -32,6 +32,39 @@ end
     long_description:  Faker::Lorem.paragraph,
     risk_description:  Faker::Lorem.sentence,
     start_date:  Faker::Date.forward(2),
-    end_date:  Faker::Date.forward(30)
+    end_date:  Faker::Date.forward(30),
+    category_id:  1
   )
 end
+
+Reward.create!(
+  title:  "Reward 1",
+  description:  Faker::Lorem.sentence,
+  amount:  10.0,
+  project_id:  1
+)
+
+Reward.create!(
+  title:  "Reward 2",
+  description:  Faker::Lorem.sentence,
+  amount:  15.0,
+  project_id:  1
+)
+
+Pledge.create!(
+  amount:  10.0,
+  user_id:  1,
+  reward_id:  1
+)
+
+Pledge.create!(
+  amount:  15.0,
+  user_id:  2,
+  reward_id:  2
+)
+
+Pledge.create!(
+  amount:  10.0,
+  user_id:  3,
+  reward_id:  1
+)
