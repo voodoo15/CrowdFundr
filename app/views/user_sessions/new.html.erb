@@ -1,6 +1,6 @@
 <div class="form-box">
   <h1>Log in</h1>
-  <%= form_tag sessions_path do %>
+  <%= form_tag user_sessions_path, method: :post do %>
 
   <div class="field">
   <%= label_tag :email %><br/>
@@ -10,10 +10,6 @@
   <%= label_tag :password %><br/>
   <%= password_field_tag :password %>
   </div>
-  <div class="field">
-   <%= f.label :password_confirmation %><br />
-   <%= f.password_field :password_confirmation %>
-</div>
   <div class="action"><%= submit_tag "Log in" %></div>
     <% end %>
 </div>
