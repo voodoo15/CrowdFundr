@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_secure_password
+  authenticates_with_sorcery!
 
   has_many :projects
   has_many :pledges
