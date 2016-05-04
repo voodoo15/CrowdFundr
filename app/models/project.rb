@@ -17,6 +17,6 @@ class Project < ActiveRecord::Base
   end
 
   def days_remaining
-    return (self.created_at - self.end_date).to_i
+    return (self.end_date.to_date - self.created_at.to_date).to_i - 1
   end
 end
