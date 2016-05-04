@@ -16,18 +16,18 @@ categories.each do |category|
   Category.create!( description:  category )
 end
 
-5.times do
-  User.create!(
-    first_name: Faker::Name.first_name,
-    last_name:  Faker::Name.first_name,
-    address:  Faker::Address.street_address,
-    city:  Faker::Address.city,
-    province:  ["BC", "AB", "SK", "MB", "ON", "QC", "NB"].sample,
-    postal_code:  "#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}",
-    email:  Faker::Internet.email,
-    password_digest:  Faker::Internet.password
-  )
-end
+# 5.times do
+#   User.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name:  Faker::Name.first_name,
+#     address:  Faker::Address.street_address,
+#     city:  Faker::Address.city,
+#     province:  ["BC", "AB", "SK", "MB", "ON", "QC", "NB"].sample,
+#     postal_code:  "#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}",
+#     email:  Faker::Internet.email,
+#     salt:  Faker::Internet.password
+#   )
+# end
 
 5.times do
   Project.create!(
