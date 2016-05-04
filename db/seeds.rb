@@ -6,10 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-5.times do
-  Category.create!(
-    description:  Faker::Lorem.word
-  )
+categories = [
+  "art",
+  "technology",
+  "music"
+]
+
+categories.each do |category|
+  Category.create!( description:  category )
 end
 
 5.times do
