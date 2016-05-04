@@ -1,0 +1,30 @@
+<h1>User Profile</h1>
+
+  <p>
+    email: <%= @user.email %>
+  </p>
+  <p>
+    first name:  <%= @user.first_name %>
+  </p>
+  <p>
+    last name:  <%= @user.last_name %>
+  </p>
+  <p>
+    address:  <%= @user.address %>
+  </p>
+  <p>
+    city:  <%= @user.city %>
+  </p>
+  <p>
+    province:  <%= @user.province %>
+  </p>
+  <p>
+    postal code:  <%= @user.postal_code %>
+  </p>
+  <p>
+    phone number:  <%= number_to_phone(@user.phone_number, area_code: true) %>
+  </p>
+
+
+<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+<%= link_to "Back", root_path %>
