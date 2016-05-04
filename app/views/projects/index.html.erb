@@ -4,7 +4,7 @@
   <% @projects.each do |project| %>
   <table class="table">
     <tr>
-      <td><p><%= project.title%></p></td>
+      <td><p><%= link_to project.title%></p></td>
       <td><img src="http://placekitten.com/400/400"></td>
   </table>
   <% end %>

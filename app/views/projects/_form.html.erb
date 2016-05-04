@@ -33,12 +33,6 @@
     <%= f.number_field :funding_amount %>
   </div>
 
-  <div class="category_ids">
-    <% if Category.all.any? %>
-      <%= f.label :category_ids, 'Category' %>
-      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-    <% end %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
