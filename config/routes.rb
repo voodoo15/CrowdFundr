@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'projects/index'
+
+  get 'projects/show'
+
+  get 'projects/new'
+
+  get 'projects/create'
+
+  get 'projects/edit'
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
 
