@@ -38,6 +38,9 @@ gem 'faker', '~> 1.6', '>= 1.6.3'
 #Use factory girl for seed data
 gem 'factory_girl_rails', '~> 4.7'
 
+#Use sorcery for authentication
+gem 'sorcery', '~> 0.9.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
