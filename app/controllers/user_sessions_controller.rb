@@ -1,11 +1,11 @@
-class SessionsController < ApplicationController
+class UserSessionsController < ApplicationController
   def new
     @user = User.new
   end
 
   def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to products_url, notice: "You're logged in."
+      redirect_back_or_to root_url, notice: "You're logged in."
     else
       flash.now[:alert] = "Invalid email or password"
       render action: "new"
@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to products_url, notice: "Logged out."
+    redirect_to root_url, notice: "Logged out."
   end
 end
