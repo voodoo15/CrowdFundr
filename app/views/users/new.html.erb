@@ -1,2 +1,47 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>New User</h1>
+
+<%= form_for @user do |f| %>
+<div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+</div>
+<div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+</div>
+<div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+</div>
+<div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %><br />
+</div>
+<div class="field">
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name %>
+</div>
+<div class="field">
+  <%= f.label :phone_number %><br />
+  <%= f.text_field :phone_number %>
+</div>
+<div class="field">
+  <%= f.label :address %><br />
+  <%= f.text_field :address %>
+</div>
+<div class="field">
+  <%= f.label :city %><br />
+  <%= f.text_field :city %>
+</div>
+<div class="field">
+  <%= f.label :province %><br />
+  <%= f.text_field :province %>
+</div>
+<div class="field"><br />
+  <%= f.label :postal_code %><br />
+  <%= f.text_field :postal_code %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
