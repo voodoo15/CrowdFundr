@@ -13,9 +13,10 @@ class Project < ActiveRecord::Base
   end
 
   def ended?
-    DateTime.now.to_date > self.end_date
+    return DateTime.now.to_date > self.end_date
   end
 
   def days_remaining
+    return (self.created_at - self.end_date).to_i
   end
 end
