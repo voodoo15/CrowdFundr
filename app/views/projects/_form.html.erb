@@ -1,0 +1,45 @@
+<%= form_for @project do |f| %>
+</div>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :short_description %>
+    <%= f.text_field :short_description%>
+  </div>
+  <div class="field">
+    <%= f.label :long_description %>
+    <%= f.text_field :long_description %>
+  </div>
+  <div class="field">
+    <%= f.label :risk_description %>
+    <%= f.telephone_field :risk_description %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %>
+    <%= f.date_field :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :funding_amount %>
+    <%= f.number_field :funding_amount %>
+  </div>
+
+  <div class="category_ids">
+    <% if Category.all.any? %>
+      <%= f.label :category_ids, 'Category' %>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<%end%>
