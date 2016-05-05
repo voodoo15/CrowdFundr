@@ -3,16 +3,44 @@
   <div class="title-and-creator">
     <h1><%= @project.title %></h1>
     <h4>By: (creator of project)</h4>
+    <p><b>Description: </b> <%= @project.short_description %></p>
   </div>
 
   <div class="main-project-info">
-    <table>
-      <tr>
-      <td>
+    <table id="main-project-table">
+      <tr id="main-project-table-row">
+        <td id="project-video">VIDEO HERE</td>
+        <td id="column-two">
+      <table>
+        <tr>
+      <td id="backers">
+        <p>Number of Backers: <%= @project.count_backers %></p>
       </td>
-      <td><p>
-      <b>Description:</b> <%= @project.short_description %></p></td>
       </tr>
+      <tr>
+          <td id="pledged">
+        <p>Amount Pledged: <%= @project.amount_pledged %></p>
+      </td>
+    </tr>
+    <tr>
+      <td id="days-to-go">
+        <p>Days To Go: <%= @project.days_remaining %></p>
+      </td>
+    </tr>
+    <tr>
+    <td id="back-this-project">
+        <button class="back-this-project-btn">
+          <%= link_to "Back This Project!", pledge_path %>
+        </button>
+      </td>
+      </tr>
+
     </table>
+  </table>
+  </td>
   </div>
+</div>
+<div class=" show-rewards">
+  <%= @project.rewards.each %>
+  <p>gjhkguygjhgkjhghkjgkhjgkjhgjhkghjgkjhgkjhgjfghjkjhgfd</p>
 </div>

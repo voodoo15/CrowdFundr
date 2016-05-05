@@ -1,24 +1,94 @@
+$visual-grid: true;
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
 
+body {
+  @include background(linear-gradient(white, yellowgreen) left repeat, radial-gradient(red, orange));
+}
 
-.container {
-  @include outer-container;
+nav {
+  @include background(linear-gradient(yellow, yellowgreen) left repeat, radial-gradient(red, orange));
+  height: 120px;
+  ul {
+    float: right;
+  }
+
+}
+container {
+  // @include outer-container;
+  width: 100%;
   margin: auto;
 }
 
-.table {
-  // @include outer-container
+#index-page h1 {
+  text-align: center;
 }
-.tr
+#project-index-table {
+  border: 2px solid;
+  // @include outer-container;
+  @include fill-parent();
+  // @include span-columns(8);
 
+  tr {
+
+    @include row(table);
+    @include fill-parent();
+    @include span-columns(8);
+  }
+
+  td {
+    border: 1px solid;
+  }
+  #project-name-desc {
+    @include span-columns(8);
+  }
+  #project-img {
+    @include span-columns(8);
+  }
+}
 
 .title-and-creator {
   text-align: center;
-
+  h1 {
+  @include text-decoration(underline double rgb(124,213,224));
+  }
 }
 .main-project-info {
-  height: 800px;
-  @include span-columns(8);
+  @include outer-container;
+  // @include fill-parent();
+  height: auto;
+
+  #main-project-table {
+    @include fill-parent();
+    @include outer-container;
+    text-align: center;
+    border: 2px solid;
+    margin: auto;
+
+  #project-video {
+    @include span-columns(5);
+  }
+  td {
+    border: 1px solid;
+  }
+  }
+  #backers-pledged-days-button {
+    // @include span-columns(5);
+  }
+
+  #backers #pledged #days-to-go #back-this-project {
+    @include span-columns(7);
+  }
+  #main-project-table-row {
+    @include fill-parent();
+    #column-two {
+      @include span-columns(7);
+    }
+  }
+
+}
+.show-rewards {
+  width: 300px;
+  float: right;
 }
