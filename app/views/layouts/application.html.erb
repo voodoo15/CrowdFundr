@@ -9,8 +9,9 @@
 <body>
 
   <nav>
+    <%= link_to "CrowdFundr", root_path %>
     <% if current_user %>
-      <%= link_to "New Project", new_project_path %> |
+      <%= link_to "Create a project", new_project_path %> |
       <%= link_to "User Profile", user_path(current_user.id) %> |
       <%= link_to "Logout", :logout, method: :post %>
     <% else %>
