@@ -12,5 +12,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :first_name, :last_name, :address, :city, :postal_code, presence:  true
   validates :phone_number, length: { is:  10 }
+  validates :postal_code, length: { is: 6 }
+  validates_format_of :postal_code, :with => /[ABCEGHJKLMNPRSTVXYZ][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]/
   validates_inclusion_of :province, in: %w(AB BC SK MB ON QC NB NS PE NL NT YT NU)
 end
