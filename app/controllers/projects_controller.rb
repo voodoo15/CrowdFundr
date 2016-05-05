@@ -14,7 +14,9 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-       redirect_to projects_url
+      redirect_to projects_url
+     else
+      render :new
     end
   end
 

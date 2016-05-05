@@ -10,7 +10,7 @@
   </div>
   <div class="field">
     <%= f.label :long_description %>
-    <%= f.text_field :long_description %>
+    <%= f.text_area :long_description %>
   </div>
   <div class="field">
     <%= f.label :risk_description %>
@@ -25,8 +25,8 @@
     <%= f.date_field :end_date %>
   </div>
   <div class="field">
-    <%= f.label :category_id %>
-    <%= f.number_field :category_id %>
+    Category<br/>
+    <%= select("post", :category, Category.all.collect {|c| [ c.description, c.id ] }, {prompt: 'Select Category'}) %>
   </div>
   <div class="field">
     <%= f.label :funding_amount %>
