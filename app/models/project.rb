@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   has_many :pledges, through: :rewards
 
   validates :title, :short_description, :long_description, :risk_description, presence: true
-  validates_associated :category
+  validates_associated :category, :user
   validates :funding_amount, :numericality => { :greater_than => 0 }
 
   def count_backers

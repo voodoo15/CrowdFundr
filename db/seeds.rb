@@ -42,8 +42,9 @@ end
     risk_description:  Faker::Lorem.sentence,
     start_date:  Faker::Date.forward(2),
     end_date:  Faker::Date.forward(30),
-    category_id:  1,
-    funding_amount:  10.00
+    category_id:  [1..3].sample,
+    funding_amount:  10.00,
+    user_id:  [1, 2, 3, 4, 5].sample
   )
 end
 
