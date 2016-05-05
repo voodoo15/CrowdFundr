@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
   root  'projects#index'
 
+  resources :password_resets, only: [:create, :edit, :update]
   resources :user_sessions
   resources :users
   resources :projects, only: [:index, :show, :new, :create, :edit]
