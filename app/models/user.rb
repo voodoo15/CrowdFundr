@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :email, uniqueness: true
+  validates :first_name, :last_name, :address, :city, :postal_code, presence:  true
+  validates :phone_number, length: { is:  10 }
+  validates :postal_code, length: { is: 6 }
+  validates_inclusion_of :province, in: %w(AB BC SK MB ON QC NB NS PE NL NT YT NU)
 end

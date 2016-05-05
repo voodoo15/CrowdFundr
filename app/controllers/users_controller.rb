@@ -18,11 +18,21 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user)
+  end
+
+  def update
+    @user = User.find(current_user)
+    if @user.update_attributes(user_params)
+      redirect_to user_url(current_user)
+    else
+      render :new
+    end
   end
 
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name,
-                                 :address, :city, :province, :postal_code)
+                                 :address, :city, :province, :postal_code, :phone_number)
   end
 end
