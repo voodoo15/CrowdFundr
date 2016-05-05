@@ -1,3 +1,24 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+
+
+.container {
+  @include outer-container;
+  margin: auto;
+}
+
+.table {
+  // @include outer-container
+}
+.tr
+
+
+.title-and-creator {
+  text-align: center;
+
+}
+.main-project-info {
+  height: 800px;
+  @include span-columns(8);
+}

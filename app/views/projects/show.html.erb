@@ -1,14 +1,18 @@
-<h1><%= @project.title %></h1>
+<div class="container">
 
+  <div class="title-and-creator">
+    <h1><%= @project.title %></h1>
+    <h4>By: (creator of project)</h4>
+  </div>
 
-<table>
-
+  <div class="main-project-info">
+    <table>
       <tr>
-        <td>
-
-        </td>
-        <td><p>
-        <b>Description:</b> <%= @project.short_description %></p></td>
-    </tr>
-
-  </table>
+      <td>
+      </td>
+      <td><p>
+      <b>Description:</b> <%= @project.short_description %></p></td>
+      </tr>
+    </table>
+  </div>
+</div>
