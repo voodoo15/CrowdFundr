@@ -33,6 +33,20 @@
     <%= f.number_field :funding_amount %>
   </div>
 
+  <%= f.fields_for :rewards, [Reward.new, Reward.new, Reward.new] do |reward| %>
+    <div class="field">
+      <%= reward.label :title %>
+      <%= reward.text_field :title %>
+    </div>
+    <div class="field">
+      <%= reward.label :description %>
+      <%= reward.text_area :description %>
+    </div>
+    <div class="field">
+      <%= reward.label :amount %>
+      <%= reward.number_field :amount %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

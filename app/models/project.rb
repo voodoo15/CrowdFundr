@@ -8,6 +8,8 @@ class Project < ActiveRecord::Base
   validates_associated :category, :user
   validates :funding_amount, :numericality => { :greater_than => 0 }
 
+  accepts_nested_attributes_for :rewards, reject_if: :all_blank
+
   def count_backers
     return self.pledges.count
   end
