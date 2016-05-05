@@ -4,8 +4,6 @@ class Project < ActiveRecord::Base
   has_many :rewards
   has_many :pledges, through: :rewards
 
-  protected
-
   def count_backers
     return self.pledges.count
   end
