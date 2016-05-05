@@ -41,6 +41,8 @@ gem 'factory_girl_rails', '~> 4.7'
 #Use sorcery for authentication
 gem 'sorcery', '~> 0.9.1'
 
+#For validates_timeliness 
+gem 'validates_timeliness', '~> 4.0', '>= 4.0.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
