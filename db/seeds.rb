@@ -30,7 +30,7 @@ end
     email:  Faker::Internet.email,
     password:  fake_password,
     password_confirmation:  fake_password,
-    phone_number:  '1234567890'
+    phone_number:  rand(10 ** 10).to_s
   )
 end
 
