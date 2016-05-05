@@ -29,7 +29,8 @@ end
     postal_code:  "#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}#{['A','B','C','D','E'].sample}#{[1, 2, 3, 4, 5].sample}",
     email:  Faker::Internet.email,
     password:  fake_password,
-    password_confirmation:  fake_password
+    password_confirmation:  fake_password,
+    phone_number:  '1234567890'
   )
 end
 
