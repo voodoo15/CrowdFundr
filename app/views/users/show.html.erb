@@ -28,3 +28,28 @@
 
 <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
 <%= link_to "Back", request.referer.present? ? request.referer : root_path %>
+
+<% if @user.projects.any? %>
+
+  <h1>Projects Owned</h1>
+
+  <% @user.projects.each do |p| %>
+    <div>
+      project name:  <%= p.title %><br/>
+      project description:  <%= p.short_description %><br/>
+    </div>
+  <% end %>
+
+<% end %>
+
+<% if @user.rewards.any? %>
+
+  <h1>Backed Projects</h1>
+
+  <% @user.rewards.each do |r| %>
+    <div>
+      title:  <%= r.title %><br/>
+      description:  <%= r.description %><br/>
+    </div>
+  <% end %>
+<% end %>
