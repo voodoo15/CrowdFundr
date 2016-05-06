@@ -5,4 +5,5 @@ class Pledge < ActiveRecord::Base
 
   validates_associated :user, :reward
   validates :amount, :numericality => { :greater_than => 0 }
+  validates :user_id, uniqueness: { scope: :reward_id }
 end

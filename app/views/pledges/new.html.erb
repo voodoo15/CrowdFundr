@@ -7,7 +7,7 @@
   <div class="reward">
     Reward:  <%= r.title %><br/>
     Description:  <%= r.description %><br/>
-    Pledge Amount:  <%= r.amount %><br/>
+    Pledge Amount:  <%= number_to_currency(r.amount) %><br/>
   </div>
 <% end %>
 

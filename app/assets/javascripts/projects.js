@@ -6,20 +6,24 @@ $(document).on('ready page:load', function() {
 
   // alert('Yup');
 
+  var formValues = $("form")
+
   $('.pledge').on('click', function(event) {
     alert( "I got to JS Submit" );
     event.preventDefault();
 
-    // $.ajax({
-    //   url:  "/pledges",
-    //   type:  "POST",
-    //   dataType: "script",
-    //   data:  {},
-    //   success:  function(data) {
-    //     console.log(data);
-    //     alert("Worked");
-    //   }
-    // })
+    $.ajax({
+      url:  "/pledges",
+      type:  "POST",
+      dataType: "script",
+      data:  formValues,
+      success:  function(data) {
+        console.log(data);
+        alert("Worked");
+      }
+    }).done(function() {
+      alert("Got Here")
+    })
   });
 
 });

@@ -8,7 +8,8 @@ class PledgesController < ApplicationController
 
   def create
     @pledge = Pledge.new(pledge_params)
-    if @pledge.save notice: "Pledge made!"
+    if @pledge.save
+      flash[:notice] = "Pledge made!"
       redirect_to root_url
     end
   end
@@ -21,7 +22,6 @@ class PledgesController < ApplicationController
   private
 
   def pledge_params
-    binding.pry
     params.require(:pledge).permit(:amount, :user_id, :reward_id )
   end
 end

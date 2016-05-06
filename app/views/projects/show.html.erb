@@ -47,7 +47,7 @@
 <% @project.rewards.each do |r| %>
 <%= r.title %>
 <%= r.description %>
-<%= r.amount %>
-<%= button_to "Get this reward", pledges_path, {remote: true, form_class: "form", class: "pledge"} %>
+<%= number_to_currency(r.amount) %>
+<%= button_to "Get this reward", pledges_path, {remote: true, form_class: "form", class: "pledge", params: {user_id: current_user.id, reward_id: r.id, amount: r.amount}} %>
 <!-- , params: {user_id: current_user.id, reward_id: r.id, amount: r.amount} -->
 <% end %>
