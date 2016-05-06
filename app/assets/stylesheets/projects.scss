@@ -6,7 +6,7 @@
 $neue: "helvetica neue", sans serif;
 
 body {
-  @include background(linear-gradient(white, yellowgreen) left repeat, radial-gradient(red, orange));
+  @include background(linear-gradient(white, azure) left repeat, radial-gradient(red, orange));
   h1, h2, h3, p, article {
     font-family: $neue;
   }
@@ -49,41 +49,11 @@ body {
   }
 }
 //
-// PARALLAX
-$parallax-window-height: 1000px;
-$parallax-background-height: $parallax-window-height * 2;
 
-.parallax-window {
-  max-height: $parallax-window-height;
-  overflow: hidden;
-  position: relative;
+#index-current-projects {
   text-align: center;
-  width: 100%;
-}
-
-.parallax-static-content {
-  color: #9A9A8A;
-  padding: 8em 0;
-  position: relative;
-  z-index: 9;
-}
-
-.parallax-background {
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png") repeat;
-  background-position: top;
-  background-size: cover;
-  background-color: beige;
-  height: $parallax-background-height;
-  left: 0;
-  position: absolute;
-  top: - $parallax-window-height / 3;
-  width: 100%;
-}
-//
-
-
-#index-page h1 {
-  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 #project-index-table {
@@ -173,6 +143,7 @@ $parallax-background-height: $parallax-window-height * 2;
 .long-description {
   display: block;
   float: left;
+  min-height: 1000px;
 }
 
 .show-rewards {
