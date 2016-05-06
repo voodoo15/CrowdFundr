@@ -30,9 +30,15 @@
     </tr>
     <tr>
     <td id="back-this-project">
+      <% if current_user %>
         <button class="back-this-project-btn">
           <%= button_to "Back this Project", new_pledge_path , method: :get, params: {project_id: @project.id}%>
         </button>
+        <% else %>
+        <p>
+          Please register or login to back this project.
+        </p>
+        <% end %>
       </td>
 
       </tr>
@@ -45,9 +51,18 @@
 </div>
 </p>
 <% @project.rewards.each do |r| %>
-<%= r.title %>
-<%= r.description %>
-<%= number_to_currency(r.amount) %>
-<%= button_to "Get this reward", pledges_path, {remote: true, form_class: "form", class: "pledge", params: {user_id: current_user.id, reward_id: r.id, amount: r.amount}} %>
-<!-- , params: {user_id: current_user.id, reward_id: r.id, amount: r.amount} -->
+<div>
+  <%= r.title %><br/>
+  <%= r.description %><br/>
+  <%= number_to_currency(r.amount) %><br/>
+</div>
+
+  <% if current_user %>
+    <%= button_to "Get this reward", pledges_path, {remote: true, form_class: "form", class: "pledge", params: {user_id: current_user.id, reward_id: r.id, amount: r.amount}} %><br/>
+    <!-- , params: {user_id: current_user.id, reward_id: r.id, amount: r.amount} -->
+    <% else %>
+    <p>
+       register or login to back this project.
+    </p>
+  <% end %>
 <% end %>
