@@ -20,7 +20,7 @@
       </tr>
       <tr>
           <td id="pledged">
-        <p>Amount Pledged: <%= @project.amount_pledged %></p>
+        <p>Amount Pledged: <%= number_to_currency(@project.amount_pledged) %></p>
       </td>
     </tr>
     <tr>
