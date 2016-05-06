@@ -13,25 +13,23 @@ nav {
   ul {
     float: right;
   }
+}
+.container {
+  @include outer-container;
+}
 
-}
-container {
-  // @include outer-container;
-  width: 100%;
-  margin: auto;
-}
+// INDEX PAGE
 
 #index-page h1 {
   text-align: center;
 }
-#project-index-table {
+table #project-index-table {
   border: 2px solid;
   // @include outer-container;
-  @include fill-parent();
-  // @include span-columns(8);
+  // @include fill-parent();
+  @include span-columns(8);
 
   tr {
-
     @include row(table);
     @include fill-parent();
     @include span-columns(8);
@@ -42,6 +40,10 @@ container {
   }
   #project-name-desc {
     @include span-columns(8);
+    text-align: center;
+    p {
+      font-size: 1.75rem;
+    }
   }
   #project-img {
     @include span-columns(8);
@@ -54,41 +56,55 @@ container {
   @include text-decoration(underline double rgb(124,213,224));
   }
 }
+
 .main-project-info {
-  @include outer-container;
-  // @include fill-parent();
+  @include padding(20px null);
+  @include fill-parent;
+  @include row(table);
   height: auto;
 
-  #main-project-table {
+  .main-project-table {
+    // @include span-columns(12);
     @include fill-parent();
-    @include outer-container;
+    // @include outer-container;
     text-align: center;
     border: 2px solid;
-    margin: auto;
+    margin: 0;
 
-  #project-video {
-    @include span-columns(5);
-  }
-  td {
-    border: 1px solid;
-  }
-  }
-  #backers-pledged-days-button {
-    // @include span-columns(5);
-  }
+    .main-project-table-row {
+      @include fill-parent();
 
-  #backers #pledged #days-to-go #back-this-project {
-    @include span-columns(7);
-  }
-  #main-project-table-row {
-    @include fill-parent();
-    #column-two {
-      @include span-columns(7);
+      .column-one {
+        @include span-columns(7);
+      }
+      .column-two {
+        @include span-columns(11);
+        text-align: right;
+        float: right;
+        .x {
+          @include fill-parent();
+          float:right;
+          margin-left: 10%;
+          #proj-stats {
+            @include fill-parent();
+            border-left: 2px solid;
+          }
+        }
+      }
     }
   }
-
 }
+
 .show-rewards {
+  // @include fill-parent();
   width: 300px;
   float: right;
+  text-align: right;
+  margin: 0;
+
+  #pledge-btn {
+    height: 100px;
+    width: 200px;
+    border-top: 1px solid;
+    }
 }
