@@ -10,47 +10,54 @@
     <table class="main-project-table">
       <tr class="main-project-table-row">
 
-        <td class="column-one">VIDEO HERE</td>
+        <td class="column-one">
+          <div class="video">
+            <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gKUI--Tycg8?list=FL-nhrSdZC6vefG4VmW5NR8Q" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </td>
         <td class="column-two">
           <table class="x">
-            <tr>
-          <td id="proj-stats">
+            <tr id="proj-stat-row">
+          <td id="proj-stat">
             <p>Number of Backers: <%= @project.count_backers %></p>
           </td>
           </tr>
           <tr>
-              <td id="proj-stats">
+              <td id="proj-stat">
             <p>Amount Pledged: <%= @project.amount_pledged %></p>
           </td>
         </tr>
         <tr>
-          <td id="proj-stats">
+          <td id="proj-stat">
             <p>Days To Go: <%= @project.days_remaining %></p>
           </td>
         </tr>
         <tr>
-        <td id="proj-stats">
+        <td id="proj-stat">
             <button class="back-this-project-btn">
               <%= link_to "Back This Project!", pledges_path %>
             </button>
           </td>
           </tr>
         </table>
-  </table>
-  </td>
+    </table>
+    </td>
+    <div class="short-description">
+      <h2><%= @project.short_description %></h2>
+    </div>
   </div>
 
+  <div class="long-description">
+    <h3><%= @project.long_description %></h3>
+  </div>
+
+</div>
 
 <div class=" show-rewards">
   <!-- <%= @project.rewards.each %>
   <p>gjhkguygjhgkjhghkjgkhjgkjhgjhkghjgkjhgkjhgjfghjkjhgfd</p> -->
-
-<div class="short-description">
-  Short Description Here
-</div>
-<div class="long-description">
-  Long Description Here
-</div>
 
   <aside>
     <div class="container" id="pledge-btn">
@@ -71,4 +78,3 @@
   </aside>
 
   </div>
-</div>

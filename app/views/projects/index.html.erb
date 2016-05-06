@@ -1,11 +1,19 @@
-<div id="index-page">
-<h1>Here's a List of Our Current Projects</h1>
+<!-- PARALLAX WINDOW -->
+<div id="js-parallax-window" class="parallax-window">
+  <div class="parallax-static-content">
+    <b>Parallax Window</b>
+  </div>
+  <div id="js-parallax-background" class="parallax-background"></div>
+</div>
+<!-- PARALLAX WINDOW -->
 
   <div class="container">
+    <h1>Here's a List of Our Current Projects</h1>
+
     <% @projects.each do |project| %>
     <table id="project-index-table">
       <tr>
-        <td id="project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
+        <td id="index-project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
         <td id="project-img"><img src="http://placekitten.com/400/400"></td>
     </table>
     <% end %>
