@@ -14,6 +14,8 @@ class PledgesController < ApplicationController
   end
 
   def new
+    @pledge = Pledge.new
+    @project = Project.find(params[:project_id])
   end
 
   private
