@@ -10,8 +10,6 @@ $(document).on('ready page:load', function() {
     alert( "I got to JS Submit" );
     event.preventDefault();
 
-
-    
   });
 
 });

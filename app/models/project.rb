@@ -25,4 +25,8 @@ class Project < ActiveRecord::Base
   def days_remaining
     return (self.end_date.to_date - self.created_at.to_date).to_i - 1
   end
+
+  def user_name
+    return "#{self.user.first_name} #{self.user.last_name}"
+  end
 end
