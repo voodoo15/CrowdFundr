@@ -10,6 +10,16 @@ $(document).on('ready page:load', function() {
     alert( "I got to JS Submit" );
     event.preventDefault();
 
+    // $.ajax({
+    //   url:  "/pledges",
+    //   type:  "POST",
+    //   dataType: "script",
+    //   data:  {},
+    //   success:  function(data) {
+    //     console.log(data);
+    //     alert("Worked");
+    //   }
+    // })
   });
 
 });

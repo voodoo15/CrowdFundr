@@ -2,19 +2,21 @@
 
   <div class="title-and-creator">
     <h1><%= @project.title %></h1>
-    <h4>By: (creator of project)</h4>
+    <h4>By: <%= @project.owner_name %></h4>
   </div>
 
   <div class="main-project-info">
     <p>
-      Description: <%= @project.short_description %> <%= @project.amount_pledged %>
+      Description: <%= @project.short_description %> <%= @project.amount_pledged %><br/>
+      
+    </br/> <% = link_to "Back this Project", rewards_path %>
     </p>
     <% @project.rewards.each do |r| %>
     <%= r.title %>
     <%= r.description %>
     <%= r.amount %>
-      <%= button_to "Back this Project", {remote: true}, {form_class: 'form', class: 'pledge'} %>
-
+      <%= button_to "Get this reward", pledges_path, {remote: true, form_class: "form", class: "pledge"} %>
+<!-- , params: {user_id: current_user.id, reward_id: r.id, amount: r.amount} -->
     <% end %>
   </div>
 
