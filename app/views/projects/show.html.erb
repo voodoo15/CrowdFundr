@@ -8,8 +8,7 @@
   <div class="main-project-info">
     <p>
       Description: <%= @project.short_description %> <%= @project.amount_pledged %><br/>
-      
-    </br/> <% = link_to "Back this Project", rewards_path %>
+      <%= button_to "Back this Project", new_pledge_path , method: :get%>
     </p>
     <% @project.rewards.each do |r| %>
     <%= r.title %>
