@@ -6,13 +6,16 @@
   </div>
 
   <div class="main-project-info">
-    <table>
-      <tr>
-      <td>
-      </td>
-      <td><p>
-      <b>Description:</b> <%= @project.short_description %> <%= @project.amount_pledged %> </p></td>
-      </tr>
-    </table>
+    <p>
+      Description: <%= @project.short_description %> <%= @project.amount_pledged %>
+    </p>
+    <% @project.rewards.each do |r| %>
+    <%= r.title %>
+    <%= r.description %>
+    <%= r.amount %>
+      <%= button_to "Back this Project", {remote: true}, {form_class: 'form', class: 'pledge'} %>
+
+    <% end %>
   </div>
+
 </div>
