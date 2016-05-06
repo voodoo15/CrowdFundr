@@ -9,7 +9,11 @@
 <body>
 
   <nav>
+    <ul>
+      <li>
     <%= link_to "CrowdFundr", root_path %>
+  </li>
+  <li>
     <% if current_user %>
       <%= link_to "Create a project", new_project_path %> |
       Welcome, <%= current_user.first_name %> |
@@ -19,6 +23,8 @@
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>
     <% end %>
+  </li>
+  </ul>
   </nav>
 
 

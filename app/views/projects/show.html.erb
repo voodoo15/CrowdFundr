@@ -2,21 +2,52 @@
 
   <div class="title-and-creator">
     <h1><%= @project.title %></h1>
+  </div>
     <h4>By: <%= @project.owner_name %></h4>
+    <p><b>Description: </b> <%= @project.short_description %></p>
   </div>
 
   <div class="main-project-info">
-    <p>
-      Description: <%= @project.short_description %> <%= @project.amount_pledged %><br/>
-      <%= button_to "Back this Project", new_pledge_path , method: :get, params: {project_id: @project.id}%>
-    </p>
-    <% @project.rewards.each do |r| %>
-    <%= r.title %>
-    <%= r.description %>
-    <%= r.amount %>
-      <%= button_to "Get this reward", pledges_path, {remote: true, form_class: "form", class: "pledge"} %>
-<!-- , params: {user_id: current_user.id, reward_id: r.id, amount: r.amount} -->
-    <% end %>
+    <table id="main-project-table">
+      <tr id="main-project-table-row">
+        <td id="project-video">VIDEO HERE</td>
+        <td id="column-two">
+      <table>
+        <tr>
+      <td id="backers">
+        <p>Number of Backers: <%= @project.count_backers %></p>
+      </td>
+      </tr>
+      <tr>
+          <td id="pledged">
+        <p>Amount Pledged: <%= @project.amount_pledged %></p>
+      </td>
+    </tr>
+    <tr>
+      <td id="days-to-go">
+        <p>Days To Go: <%= @project.days_remaining %></p>
+      </td>
+    </tr>
+    <tr>
+    <td id="back-this-project">
+        <button class="back-this-project-btn">
+          <%= button_to "Back this Project", new_pledge_path , method: :get, params: {project_id: @project.id}%>
+        </button>
+      </td>
+
+      </tr>
+
+    </table>
+  </table>
+  </td>
   </div>
 
 </div>
+</p>
+<% @project.rewards.each do |r| %>
+<%= r.title %>
+<%= r.description %>
+<%= r.amount %>
+<%= button_to "Get this reward", pledges_path, {remote: true, form_class: "form", class: "pledge"} %>
+<!-- , params: {user_id: current_user.id, reward_id: r.id, amount: r.amount} -->
+<% end %>

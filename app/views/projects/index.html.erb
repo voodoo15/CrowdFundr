@@ -1,11 +1,14 @@
+<div id="index-page">
 <h1>Here is a list of our projects</h1>
 
-<div class="container">
-  <% @projects.each do |project| %>
-  <table class="table">
-    <tr>
-      <td><p><%= link_to project.title, project_path(project.id) %></p></td>
-      <td><img src="http://placekitten.com/400/400"></td>
-  </table>
-  <% end %>
+  <div class="container">
+    <% @projects.each do |project| %>
+    <table id="project-index-table">
+      <tr>
+        <td id="project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
+        <td id="project-img"><img src="http://placekitten.com/400/400"></td>
+    </table>
+    <% end %>
+  </div>
+
 </div>
