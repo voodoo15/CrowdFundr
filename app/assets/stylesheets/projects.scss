@@ -1,33 +1,98 @@
-$visual-grid: true;
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
 
+
+$neue: "helvetica neue", sans serif;
+
 body {
   @include background(linear-gradient(white, yellowgreen) left repeat, radial-gradient(red, orange));
-}
-
-nav {
-  @include background(linear-gradient(yellow, yellowgreen) left repeat, radial-gradient(red, orange));
-  height: 120px;
-  ul {
-    float: right;
+  h1, h2, h3, p, article {
+    font-family: $neue;
   }
 }
+
 .container {
   @include outer-container;
 }
 
 // INDEX PAGE
+// HERO UNIT
+.hero {
+  $large-screen: 50em !default;
+  align-items: center;
+  background: url("http://www.thefreedomtrader.com/wp-content/uploads/2015/08/livecrowd.jpg");
+  background-position: right;
+  background-size: none;
+  display: flex;
+  justify-content: center;
+  min-height: 25em;
+  padding: 2em;
+
+  @include media($large-screen) {
+    background-position: left;
+    background-size: cover;
+    justify-content: flex-end;
+  }
+
+  .hero-content {
+    max-width: 20em;
+    text-align: center;
+
+    @include media($large-screen) {
+      text-align: left;
+    }
+  }
+
+  .hero-logo {
+    margin: auto;
+  }
+}
+//
+// PARALLAX
+$parallax-window-height: 1000px;
+$parallax-background-height: $parallax-window-height * 2;
+
+.parallax-window {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  padding: 8em 0;
+  position: relative;
+  z-index: 9;
+}
+
+.parallax-background {
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png") repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}
+//
+
 
 #index-page h1 {
   text-align: center;
 }
-table #project-index-table {
+
+#project-index-table {
   border: 2px solid;
+  border-radius: 10px 10px;
   // @include outer-container;
   // @include fill-parent();
-  @include span-columns(8);
+  @include fill-parent();
+
 
   tr {
     @include row(table);
@@ -38,7 +103,7 @@ table #project-index-table {
   td {
     border: 1px solid;
   }
-  #project-name-desc {
+  #index-project-name-desc {
     @include span-columns(8);
     text-align: center;
     p {
@@ -50,6 +115,7 @@ table #project-index-table {
   }
 }
 
+// PROJECT SHOW
 .title-and-creator {
   text-align: center;
   h1 {
@@ -61,15 +127,14 @@ table #project-index-table {
   @include padding(20px null);
   @include fill-parent;
   @include row(table);
-  height: auto;
 
   .main-project-table {
-    // @include span-columns(12);
     @include fill-parent();
-    // @include outer-container;
     text-align: center;
     border: 2px solid;
+    border-radius: 10px 10px;
     margin: 0;
+    min-height: 540px;
 
     .main-project-table-row {
       @include fill-parent();
@@ -81,18 +146,33 @@ table #project-index-table {
         @include span-columns(11);
         text-align: right;
         float: right;
+        height: 540px;
         .x {
           @include fill-parent();
           float:right;
           margin-left: 10%;
-          #proj-stats {
+          height: 100%;
+          #proj-stat-row {
+            margin-top: 5%;
+          }
+          #proj-stat {
             @include fill-parent();
-            border-left: 2px solid;
+            border: 2px solid;
+            margin-top: 4rem;
           }
         }
       }
     }
   }
+}
+
+.short-description {
+  text-align: center;
+}
+
+.long-description {
+  display: block;
+  float: left;
 }
 
 .show-rewards {
@@ -106,5 +186,21 @@ table #project-index-table {
     height: 100px;
     width: 200px;
     border-top: 1px solid;
+    border-left: 4px solid;
     }
+}
+
+// VIDEO
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+  position: relative;
+
+  embed,
+  object,
+  iframe {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+  }
 }
