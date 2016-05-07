@@ -30,7 +30,7 @@
     </tr>
     <tr>
     <td id="back-this-project">
-      <% if @current_user %>
+      <% if current_user %>
         <button class="back-this-project-btn">
           <%= button_to "Back this Project", new_project_pledge_path(@project), method: :get %>
         </button>
@@ -57,7 +57,7 @@
   <%= number_to_currency(r.amount) %><br/>
 </div>
 
-  <% if @current_user %>
+  <% if current_user %>
     <%= button_to "Back this Project", new_project_pledge_path(@project), method: :get %>
   <% else %>
     <p>
