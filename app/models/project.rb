@@ -29,7 +29,7 @@ class Project < ActiveRecord::Base
   end
 
   def days_remaining
-    return (self.end_date.to_date - self.created_at.to_date).to_i - 1
+    return (self.end_date.beginning_of_day.to_date - self.created_at.beginning_of_day.to_date).to_i
   end
 
   def owner_name

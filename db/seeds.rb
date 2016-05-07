@@ -49,10 +49,10 @@ end
     short_description:  "Nothin but the best",
     long_description:  "The iPhone 6 and iPhone 6 Plus are smartphones designed, and marketed by Apple Inc. The devices are part of the iPhone series and were announced on September 9, 2014, and released on September 19, 2014.[16] The iPhone 6 and iPhone 6 Plus jointly serve as successors to the iPhone 5c and iPhone 5s.  The iPhone 6 and iPhone 6 Plus include a number of changes over their predecessor, including models with larger 4.7 and 5.5 inches (120 and 140 mm) displays, a faster processor, upgraded cameras, improved LTE and Wi-Fi connectivity and support for a near field communications-based mobile payments offering",
     risk_description:  "Possibility of damage to the shipped games and possible slippage of delivery date",
-    end_date:  2017-06-04,
+    end_date:  DateTime.tomorrow,
     category_id:  2,
     funding_amount:  50000,
-    user_id:  3
+    user_id:  1
   )
 
 Reward.create!(
@@ -77,7 +77,7 @@ Pledge.create!(
 
 Pledge.create!(
   amount:  500.0,
-  user_id:  2,
+  user_id:  1,
   reward_id:  2
 )
 
