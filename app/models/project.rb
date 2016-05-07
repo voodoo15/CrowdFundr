@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
   validates :title, :short_description, :long_description, :risk_description, presence: true
   validates_associated :category, :user
   validates :funding_amount, :numericality => { :greater_than => 0 }
-  validates :end_date_is_after_start_date
+  validate :end_date_is_after_start_date
 
   accepts_nested_attributes_for :rewards, reject_if: :all_blank
 
