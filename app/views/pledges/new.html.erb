@@ -8,7 +8,19 @@
     Reward:  <%= r.title %><br/>
     Description:  <%= r.description %><br/>
     Pledge Amount:  <%= number_to_currency(r.amount) %><br/>
-  </div>
-<% end %>
 
+  <% if @current_user %>
+      <%= form_for [@project, @pledge] do |f| %>
+        <%= f.hidden_field :amount, :value => r.amount %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :reward_id, :value => r.id %>
+        <%= f.submit %>
+      <% end %>
+    <% else %>
+    <p>
+      Please register or login to back this project.
+    </p>
+  <% end %>
+<% end %>
+  </div>
 <%= link_to "Back", request.referer.present? ? request.referer : root_path %>
