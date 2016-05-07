@@ -7,11 +7,17 @@ class Project < ActiveRecord::Base
   validates :title, :short_description, :long_description, :risk_description, presence: true
   validates_associated :category, :user
   validates :funding_amount, :numericality => { :greater_than => 0 }
-
-  # validate :dateproject
+  validates :end_date_is_after_start_date
 
   accepts_nested_attributes_for :rewards, reject_if: :all_blank
 
+  def end_date_is_after_start_date
+    return false if end_date.blank?
+
+    if end_date < DateTime.now
+      errors.add(:end_date, "end date cannot be before the start date")
+    end
+  end
 
   def count_backers
     return self.pledges.count
