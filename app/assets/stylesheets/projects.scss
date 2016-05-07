@@ -6,7 +6,7 @@
 $neue: "helvetica neue", sans serif;
 
 body {
-  @include background(linear-gradient(white, azure) left repeat, radial-gradient(red, orange));
+  @include background(linear-gradient(white, skyblue) left repeat, radial-gradient(red, orange));
   h1, h2, h3, p, article {
     font-family: $neue;
   }
@@ -15,8 +15,8 @@ body {
 .container {
   @include outer-container;
 }
-
 // INDEX PAGE
+
 // HERO UNIT
 .hero {
   $large-screen: 50em !default;
@@ -37,6 +37,7 @@ body {
 
   .hero-content {
     max-width: 20em;
+    min-height: 500px;
     text-align: center;
 
     @include media($large-screen) {
@@ -86,11 +87,18 @@ body {
 }
 
 // PROJECT SHOW
+
+.back-btn {
+  margin-top: 4%;
+  margin-left: 3%;
+}
 .title-and-creator {
-  text-align: center;
   margin-top: 5%;
+  text-align: center;
+
   h1 {
   @include text-decoration(underline double rgb(124,213,224));
+  text-decoration: underline;
   }
 }
 
@@ -155,10 +163,18 @@ body {
 
 .show-rewards {
   // @include fill-parent();
-  width: 30%;;
+  width: 20%;
   float: right;
   text-align: right;
   margin: 0;
+  line-height: 2rem;
+  border-left: solid 2px;
+
+  #reward-title {
+    text-decoration: underline;
+    font-size: 1.4rem;
+  }
+
 
   #pledge-btn {
     height: 100px;
@@ -180,5 +196,23 @@ body {
   iframe {
     @include position(absolute, 0 null null 0);
     @include size(100%);
+  }
+}
+
+// NEW PROJECT
+.choose-category {
+  height: 500px;
+  border: 1px solid;
+  margin-top: 5%;
+  margin-bottom: 4%;
+  .field {
+    text-align: center;
+    position: relative;
+    top: 100px;
+    font-size: 2.5rem;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 3%;
   }
 }

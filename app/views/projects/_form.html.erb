@@ -1,3 +1,6 @@
+
+
+
 <%= form_for @project do |f| %>
   <% if @project.errors.any? %>
     <div id="flash-error">
@@ -12,6 +15,15 @@
     </div>
   <% end %>
 </div>
+
+<div class="container choose-category">
+  <h1>What Type of Project Would You Like to Create?</h1>
+  <div class="field">
+    Category<br/>
+    <%= f.select :category_id, options_for_select(Category.all.collect {|c| [ c.description, c.id ] }) %>
+  </div>
+</div>
+
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -33,10 +45,7 @@
     <%= f.label :end_date %>
     <%= f.date_field :end_date %>
   </div>
-  <div class="field">
-    Category<br/>
-    <%= f.select :category_id, options_for_select(Category.all.collect {|c| [ c.description, c.id ] }) %>
-  </div>
+
   <div class="field">
     <%= f.label :funding_amount %>
     <%= f.number_field :funding_amount %>

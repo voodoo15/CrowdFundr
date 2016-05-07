@@ -1,22 +1,20 @@
+
 <div class="container">
 
   <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
-      <div class="flash-error">
+    <div class="flash-error">
         <span>
           <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
           <ul>
           <% @user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
-          </ul>
-        </span>
-      </div>
     <% end %>
   <% end %>
-  
-  <div class="flash-error">
-    <span>This is an error message <a href="#">with a link</a></span>
+</span>
+</ul>
   </div>
+
 
   <div class="field">
       <%= f.label :email %><br />
@@ -27,7 +25,7 @@
       <%= f.password_field :password %>
   </div>
   <div class="field">
-      <%= f.label :password_confirmation %> <p>(Must be longer then 3 characters() </p> <br />
+      <%= f.label :password_confirmation %> <p>(Must be Longer than 3 Characters) </p> <br />
       <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">

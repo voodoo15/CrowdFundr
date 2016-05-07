@@ -1,11 +1,15 @@
-<%= link_to "Back", request.referer.present? ? request.referer : root_path %>
+<button class="back-btn">
+  <%= link_to "Back to All Projects", request.referer.present? ? request.referer : root_path %>
+</button>
+
+
 
 <div class="container">
 
   <div class="title-and-creator">
     <h1><%= @project.title %></h1>
-    <h4><%= @project.user.first_name %><%= @project.user.last_name %></h4>
-    <p><b>Description: </b> <%= @project.short_description %></p>
+    <h4>by: <%= @project.user.first_name %><%= @project.user.last_name %></h4>
+    <p></b> <%= @project.short_description %></p>
   </div>
 
   <div class="main-project-info">
@@ -67,7 +71,7 @@
   <div class="show-rewards">
   <% @project.rewards.each do |r| %>
   <div>
-    <%= r.title %><br/>
+    <div id="reward-title"><%= r.title %><br/></div>
     <%= r.description %><br/>
     <%= number_to_currency(r.amount) %><br/>
   </div>

@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- NAVIGATION -->
   <header class="centered-navigation" role="banner">
   <div class="centered-navigation-wrapper">
     <a href="javascript:void(0)" class="mobile-logo">
@@ -15,36 +16,25 @@
     <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-        <li class="nav-link"><a><%= link_to "Projects", projects_path %></a></li>
+        <% if current_user%>
+          <li class="nav-link"><a><%= link_to "Create a Project", new_project_path %> </a></li>
+        <% end %>
         <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
         <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
-        <li class="nav-link logo">
+        <li class="nav-link logo" style="margin: auto">
           <a href="<%= projects_path %>" class="logo">
             <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="Logo image">
           </a>
-          <% if current_user %>
         </li>
-        <li class="nav-link"><a><%= link_to "Create a project", new_project_path %> </a></li>
-        <li id="js-centered-more" class="nav-link more"><a href="javascript:void(0)">More</a>
+        <% if current_user %>
+<!-- USER PROFILE DROPDOWN -->
+        <li id="js-centered-more" class="nav-link more"><a href="javascript:void(0)">Signed in as: <%= current_user.email %></a>
           <ul class="submenu">
-            <li><a href="javascript:void(0)">Submenu Item</a></li>
-            <li><a href="javascript:void(0)">Another Item</a></li>
-            <li class="more"><a href="javascript:void(0)">Item with submenu</a>
-              <ul class="submenu fly-out-right">
-                <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
-                <li><a href="javascript:void(0)">Another Item</a></li>
-              </ul>
-            </li>
-            <li class="more"><a href="javascript:void(0)">Another submenu</a>
-              <ul class="submenu fly-out-right">
-                <li><a href="javascript:void(0)">Sub-submenu</a></li>
-                <li><a href="javascript:void(0)">An Item</a></li>
-              </ul>
-            </li>
+            <li><a href="<%= user_path(current_user.id) %>">My Profile</a></li>
+            <li><%= link_to "Logout", :logout, method: :post %></a></li>
           </ul>
+<!-- USER PROFILE DROPDOWN END -->
         </li>
-        <li class="nav-link"><a> <%= link_to "User Profile", user_path(current_user.id) %></a></li>
-        <li class="nav-link"><a> <%= link_to "Logout", :logout, method: :post %> </a></li>
         <% else %>
         <li class="nav-link"><a><%= link_to "Register", new_user_path %></a></li>
         <li class="nav-link"><a><%= link_to "Login", :login %></a></li>
