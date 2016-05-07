@@ -11,14 +11,6 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :rewards, reject_if: :all_blank
 
-  def end_date_is_after_start_date
-    return false if end_date.blank?
-
-    if end_date < DateTime.now
-      errors.add(:end_date, "end date cannot be before the start date")
-    end
-  end
-
   def count_backers
     return self.pledges.count
   end
@@ -38,4 +30,15 @@ class Project < ActiveRecord::Base
   def owner_name
     return "#{self.user.first_name} #{self.user.last_name}"
   end
+
+  private
+
+  def end_date_is_after_start_date
+    return false if self.end_date.blank?
+
+    if self.end_date < DateTime.now
+      errors.add(:end_date, "end date cannot be before the start date")
+    end
+  end
+  
 end
