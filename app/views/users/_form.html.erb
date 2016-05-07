@@ -1,61 +1,68 @@
-<%= form_for @user do |f| %>
-<% if @user.errors.any? %>
-  <div id="flash-error">
-    <span>
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </span>
-  </div>
-<% end %>
+<div class="container">
 
-<div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="flash-error">
+        <span>
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          </ul>
+        </span>
+      </div>
+    <% end %>
+  <% end %>
+  
+  <div class="flash-error">
+    <span>This is an error message <a href="#">with a link</a></span>
+  </div>
+
+  <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email %>
+  </div>
+  <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+  </div>
+  <div class="field">
+      <%= f.label :password_confirmation %> <p>(Must be longer then 3 characters() </p> <br />
+      <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %><br />
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number  %><br />
+    <%= f.number_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :address  %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :province %><br />
+    <%= f.select :province, options_for_select("British Columbia":"BC", "Alberta":"AB", "Saskatchewan":"SK",
+                                               "Manitoba":"MB", "Ontario":"ON", "Quebec":"QC", "New Brunswick":"NB",
+                                               "Newfoundland":"NL", "Nova Scotia":"NS", "Prince Edward Island":"PE",
+                                               "Northwest Territories":"NT", "Yukon":"YT", "Nunavut":"NU") %>
+  </div>
+  <div class="field"><br />
+    <%= f.label :postal_code %><p> (For example "M4K2E5") </p> <br />
+    <%= f.text_field :postal_code %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
 </div>
-<div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-</div>
-<div class="field">
-    <%= f.label :password_confirmation %> <p>(Must be longer then 3 characters() </p> <br />
-    <%= f.password_field :password_confirmation %>
-</div>
-<div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %><br />
-</div>
-<div class="field">
-  <%= f.label :last_name %><br />
-  <%= f.text_field :last_name %>
-</div>
-<div class="field">
-  <%= f.label :phone_number  %><br />
-  <%= f.number_field :phone_number %>
-</div>
-<div class="field">
-  <%= f.label :address  %><br />
-  <%= f.text_field :address %>
-</div>
-<div class="field">
-  <%= f.label :city %><br />
-  <%= f.text_field :city %>
-</div>
-<div class="field">
-  <%= f.label :province %><br />
-  <%= f.select :province, options_for_select("British Columbia":"BC", "Alberta":"AB", "Saskatchewan":"SK",
-                                             "Manitoba":"MB", "Ontario":"ON", "Quebec":"QC", "New Brunswick":"NB",
-                                             "Newfoundland":"NL", "Nova Scotia":"NS", "Prince Edward Island":"PE",
-                                             "Northwest Territories":"NT", "Yukon":"YT", "Nunavut":"NU") %>
-</div>
-<div class="field"><br />
-  <%= f.label :postal_code %><p> (For example "M4K2E5") </p> <br />
-  <%= f.text_field :postal_code %>
-</div>
-<div class="actions">
-  <%= f.submit %>
-</div>
-<% end %>
