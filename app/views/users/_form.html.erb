@@ -21,7 +21,7 @@
     <%= f.password_field :password %>
 </div>
 <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %> <p>(Must be longer then 3 characters() </p> <br />
     <%= f.password_field :password_confirmation %>
 </div>
 <div class="field">
@@ -33,11 +33,11 @@
   <%= f.text_field :last_name %>
 </div>
 <div class="field">
-  <%= f.label :phone_number %><br />
+  <%= f.label :phone_number  %><br />
   <%= f.number_field :phone_number %>
 </div>
 <div class="field">
-  <%= f.label :address %><br />
+  <%= f.label :address  %><br />
   <%= f.text_field :address %>
 </div>
 <div class="field">
@@ -52,7 +52,7 @@
                                              "Northwest Territories":"NT", "Yukon":"YT", "Nunavut":"NU") %>
 </div>
 <div class="field"><br />
-  <%= f.label :postal_code %><br />
+  <%= f.label :postal_code %><p> (For example "M4K2E5") </p> <br />
   <%= f.text_field :postal_code %>
 </div>
 <div class="actions">
