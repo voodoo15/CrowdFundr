@@ -41,6 +41,10 @@
     <%= f.label :funding_amount %>
     <%= f.number_field :funding_amount %>
   </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
 
   <%= f.fields_for :rewards, [Reward.new, Reward.new, Reward.new] do |reward| %>
     <div class="field">

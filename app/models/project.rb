@@ -11,6 +11,8 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :rewards, reject_if: :all_blank
 
+  mount_uploader :image, ImageUploader
+
   def count_backers
     return self.pledges.count
   end
@@ -40,5 +42,5 @@ class Project < ActiveRecord::Base
       errors.add(:end_date, "end date cannot be before the start date")
     end
   end
-  
+
 end
