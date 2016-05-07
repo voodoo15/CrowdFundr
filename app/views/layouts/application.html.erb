@@ -25,7 +25,7 @@
           <% if current_user %>
         </li>
         <li class="nav-link"><a><%= link_to "Create a project", new_project_path %> </a></li>
-        <!-- <li id="js-centered-more" class="nav-link more"><a href="javascript:void(0)">More</a>
+        <li id="js-centered-more" class="nav-link more"><a href="javascript:void(0)">More</a>
           <ul class="submenu">
             <li><a href="javascript:void(0)">Submenu Item</a></li>
             <li><a href="javascript:void(0)">Another Item</a></li>
@@ -42,7 +42,7 @@
               </ul>
             </li>
           </ul>
-        </li> -->
+        </li>
         <li class="nav-link"><a> <%= link_to "User Profile", user_path(current_user.id) %></a></li>
         <li class="nav-link"><a> <%= link_to "Logout", :logout, method: :post %> </a></li>
         <% else %>
@@ -87,7 +87,7 @@
     </ul>
   </div>
 
-  <hr>
+<hr>
 
   <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
 </footer>
