@@ -1,37 +1,70 @@
-$visual-grid: true;
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
 
+
+$neue: "helvetica neue", sans serif;
+
 body {
-  @include background(linear-gradient(white, yellowgreen) left repeat, radial-gradient(red, orange));
+  @include background(linear-gradient(white, azure) left repeat, radial-gradient(red, orange));
+  h1, h2, h3, p, article {
+    font-family: $neue;
+  }
 }
 
-nav {
-  @include background(linear-gradient(yellow, yellowgreen) left repeat, radial-gradient(red, orange));
-  height: 120px;
-  ul {
-    float: right;
+.container {
+  @include outer-container;
+}
+
+// INDEX PAGE
+// HERO UNIT
+.hero {
+  $large-screen: 50em !default;
+  align-items: center;
+  background: url("http://www.thefreedomtrader.com/wp-content/uploads/2015/08/livecrowd.jpg");
+  background-position: right;
+  background-size: none;
+  display: flex;
+  justify-content: center;
+  min-height: 25em;
+  padding: 2em;
+
+  @include media($large-screen) {
+    background-position: left;
+    background-size: cover;
+    justify-content: flex-end;
   }
 
+  .hero-content {
+    max-width: 20em;
+    text-align: center;
+
+    @include media($large-screen) {
+      text-align: left;
+    }
+  }
+
+  .hero-logo {
+    margin: auto;
+  }
 }
-container {
-  // @include outer-container;
-  width: 100%;
-  margin: auto;
+//
+
+#index-current-projects {
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
-#index-page h1 {
-  text-align: center;
-}
 #project-index-table {
   border: 2px solid;
+  border-radius: 10px 10px;
   // @include outer-container;
+  // @include fill-parent();
   @include fill-parent();
-  // @include span-columns(8);
+
 
   tr {
-
     @include row(table);
     @include fill-parent();
     @include span-columns(8);
@@ -40,55 +73,105 @@ container {
   td {
     border: 1px solid;
   }
-  #project-name-desc {
+  #index-project-name-desc {
     @include span-columns(8);
+    text-align: center;
+    p {
+      font-size: 1.75rem;
+    }
   }
   #project-img {
     @include span-columns(8);
   }
 }
 
+// PROJECT SHOW
 .title-and-creator {
   text-align: center;
   h1 {
   @include text-decoration(underline double rgb(124,213,224));
   }
 }
-.main-project-info {
-  @include outer-container;
-  // @include fill-parent();
-  height: auto;
 
-  #main-project-table {
+.main-project-info {
+  @include padding(20px null);
+  @include fill-parent;
+  @include row(table);
+
+  .main-project-table {
     @include fill-parent();
-    @include outer-container;
     text-align: center;
     border: 2px solid;
-    margin: auto;
+    border-radius: 10px 10px;
+    margin: 0;
+    min-height: 540px;
 
-  #project-video {
-    @include span-columns(5);
-  }
-  td {
-    border: 1px solid;
-  }
-  }
-  #backers-pledged-days-button {
-    // @include span-columns(5);
-  }
+    .main-project-table-row {
+      @include fill-parent();
 
-  #backers #pledged #days-to-go #back-this-project {
-    @include span-columns(7);
-  }
-  #main-project-table-row {
-    @include fill-parent();
-    #column-two {
-      @include span-columns(7);
+      .column-one {
+        @include span-columns(7);
+      }
+      .column-two {
+        @include span-columns(11);
+        text-align: right;
+        float: right;
+        height: 540px;
+        .x {
+          @include fill-parent();
+          float:right;
+          margin-left: 10%;
+          height: 100%;
+          #proj-stat-row {
+            margin-top: 5%;
+          }
+          #proj-stat {
+            @include fill-parent();
+            border: 2px solid;
+            margin-top: 4rem;
+          }
+        }
+      }
     }
   }
-
 }
+
+.short-description {
+  text-align: center;
+}
+
+.long-description {
+  display: block;
+  float: left;
+  min-height: 1000px;
+}
+
 .show-rewards {
+  // @include fill-parent();
   width: 300px;
   float: right;
+  text-align: right;
+  margin: 0;
+
+  #pledge-btn {
+    height: 100px;
+    width: 200px;
+    border-top: 1px solid;
+    border-left: 4px solid;
+    }
+}
+
+// VIDEO
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+  position: relative;
+
+  embed,
+  object,
+  iframe {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+  }
 }

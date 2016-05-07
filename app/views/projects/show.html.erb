@@ -2,8 +2,10 @@
 
   <div class="title-and-creator">
     <h1><%= @project.title %></h1>
+
   </div>
     <h4>By: <%= @project.owner_name %></h4>
+
     <p><b>Description: </b> <%= @project.short_description %></p>
   </div>
 
@@ -40,13 +42,49 @@
         </p>
         <% end %>
       </td>
-
       </tr>
 
+    <table class="main-project-table">
+      <tr class="main-project-table-row">
+        <td class="column-one">
+          <div class="video">
+            <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gKUI--Tycg8?list=FL-nhrSdZC6vefG4VmW5NR8Q" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </td>
+        <td class="column-two">
+          <table class="x">
+            <tr id="proj-stat-row">
+          <td id="proj-stat">
+            <p>Number of Backers: <%= @project.count_backers %></p>
+          </td>
+          </tr>
+          <tr>
+              <td id="proj-stat">
+            <p>Amount Pledged: <%= @project.amount_pledged %></p>
+          </td>
+        </tr>
+        <tr>
+          <td id="proj-stat">
+            <p>Days To Go: <%= @project.days_remaining %></p>
+          </td>
+        </tr>
+        <tr>
+        <td id="proj-stat">
+            <button class="back-this-project-btn">
+              <%= link_to "Back This Project!", pledges_path %>
+            </button>
+          </td>
+          </tr>
+        </table>
     </table>
-  </table>
-  </td>
+    </td>
+    <div class="short-description">
+      <h2><%= @project.short_description %></h2>
+    </div>
   </div>
+
 
 </div>
 </p>
@@ -67,3 +105,34 @@
 <% end %>
 
 <%= link_to "Back", request.referer.present? ? request.referer : root_path %>
+
+  <div class="long-description">
+    <h3><%= @project.long_description %></h3>
+  </div>
+
+</div>
+
+<div class=" show-rewards">
+  <!-- <%= @project.rewards.each %>
+  <p>gjhkguygjhgkjhghkjgkhjgkjhgjhkghjgkjhgkjhgjfghjkjhgfd</p> -->
+
+  <aside>
+    <div class="container" id="pledge-btn">
+      <p><button class="button"><a href="">Pledge Amt. 1 </a></button></p>
+    </div>
+    <div class="container" id="pledge-btn">
+      <p><button class="button"><a href="">Pledge Amt. 2 </a></button></p>
+    </div>
+    <div class="container" id="pledge-btn">
+      <p><button class="button"><a href="">Pledge Amt. 3 </a></button></p>
+    </div>
+    <div class="container" id="pledge-btn">
+      <p><button class="button"><a href="">Pledge Amt. 4 </a></button></p>
+    </div>
+    <div class="container" id="pledge-btn">
+      <p><button class="button"><a href="">Pledge Amt. 5 </a></button></p>
+    </div>
+  </aside>
+
+  </div>
+>>>>>>> fixing

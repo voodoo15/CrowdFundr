@@ -12,9 +12,6 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :rewards, reject_if: :all_blank
 
-  # def dateproject
-  #   return DateTime.now.to_date < :end_date
-  # end
 
   def count_backers
     return self.pledges.count

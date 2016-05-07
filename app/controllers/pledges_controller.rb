@@ -1,11 +1,5 @@
 class PledgesController < ApplicationController
 
-  def destroy
-    @pledge = pledge.find[params(:id)]
-    @pledge.destroy
-    redirect_to current_user
-  end
-
   def create
     @pledge = Pledge.new(pledge_params)
     if @pledge.save
@@ -17,6 +11,19 @@ class PledgesController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @pledge = Pledge.new
+
+  def index
+    @pledges = Pledges.all
+  end
+
+  def destroy
+    @pledge = pledge.find[params(:id)]
+    @pledge.destroy
+    redirect_to current_user
+  end
+
+  def show
+    @pledge = Pledge.find(params[:id])
 
   end
 

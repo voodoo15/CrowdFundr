@@ -1,14 +1,21 @@
-<div id="index-page">
-<h1>Here is a list of our projects</h1>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="Logo Image" class="hero-logo">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni modi doloremque excepturi laudantium maxime explicabo cumque deleniti voluptate deserunt.</p>
+  </div>
+</div>
+<!-- HERO END -->
 
   <div class="container">
+    <h1 id="index-current-projects">Here's a List of Our Current Projects</h1>
+
     <% @projects.each do |project| %>
     <table id="project-index-table">
       <tr>
-        <td id="project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
+        <td id="index-project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
         <td id="project-img"><img src="http://placekitten.com/400/400"></td>
     </table>
     <% end %>
   </div>
-
 </div>
