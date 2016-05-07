@@ -13,6 +13,9 @@ class Project < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  validates_processing_of :image
+  validate :image_size_validation
+
   def count_backers
     return self.pledges.count
   end
@@ -41,6 +44,10 @@ class Project < ActiveRecord::Base
     if self.end_date < DateTime.now
       errors.add(:end_date, "end date cannot be before the start date")
     end
+  end
+
+  def image_size_validation
+    errors[:image] << "should be less than 500KB" if image.size > 0.5.megabytes
   end
 
 end
