@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505043454) do
+ActiveRecord::Schema.define(version: 20160507211439) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "description"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160505043454) do
     t.integer  "category_id"
     t.float    "funding_amount"
     t.integer  "user_id"
+    t.string   "image"
   end
 
   create_table "rewards", force: :cascade do |t|

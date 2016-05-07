@@ -45,8 +45,9 @@ gem 'sorcery', '~> 0.9.1'
 gem 'validates_timeliness', '~> 4.0', '>= 4.0.2'
 gem 'timeliness', '~> 0.3.8'
 
-#Use carrierwave for image uploading
+#Use carrierwave and imagemagick for image uploading and processiong
 gem 'carrierwave', '~> 0.11.2'
+gem 'mini_magick', '~> 4.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
