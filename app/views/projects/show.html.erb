@@ -1,51 +1,17 @@
+<%= link_to "Back", request.referer.present? ? request.referer : root_path %>
+
 <div class="container">
 
   <div class="title-and-creator">
     <h1><%= @project.title %></h1>
-
-  </div>
-    <h4>By: <%= @project.owner_name %></h4>
-
+    <h4><%= @project.user.first_name %><%= @project.user.last_name %></h4>
     <p><b>Description: </b> <%= @project.short_description %></p>
   </div>
 
   <div class="main-project-info">
-    <table id="main-project-table">
-      <tr id="main-project-table-row">
-        <td id="project-video">VIDEO HERE</td>
-        <td id="column-two">
-      <table>
-        <tr>
-      <td id="backers">
-        <p>Number of Backers: <%= @project.count_backers %></p>
-      </td>
-      </tr>
-      <tr>
-          <td id="pledged">
-        <p>Amount Pledged: <%= number_to_currency(@project.amount_pledged) %></p>
-      </td>
-    </tr>
-    <tr>
-      <td id="days-to-go">
-        <p>Days To Go: <%= @project.days_remaining %></p>
-      </td>
-    </tr>
-    <tr>
-    <td id="back-this-project">
-      <% if current_user %>
-        <button class="back-this-project-btn">
-          <%= button_to "Back this Project", new_project_pledge_path(@project), method: :get %>
-        </button>
-        <% else %>
-        <p>
-          Please register or login to back this project.
-        </p>
-        <% end %>
-      </td>
-      </tr>
-
     <table class="main-project-table">
       <tr class="main-project-table-row">
+
         <td class="column-one">
           <div class="video">
             <div class="video-wrapper">
@@ -53,78 +19,66 @@
             </div>
           </div>
         </td>
+
         <td class="column-two">
-          <table class="x">
-            <tr id="proj-stat-row">
-          <td id="proj-stat">
-            <p>Number of Backers: <%= @project.count_backers %></p>
-          </td>
-          </tr>
+        <table class="project-stats">
           <tr>
-              <td id="proj-stat">
-            <p>Amount Pledged: <%= @project.amount_pledged %></p>
-          </td>
+        <td id="backers">
+          <p>Number of Backers: <%= @project.count_backers %></p>
+        </td>
         </tr>
         <tr>
-          <td id="proj-stat">
-            <p>Days To Go: <%= @project.days_remaining %></p>
+            <td id="pledged">
+          <p>Amount Pledged: <%= number_to_currency(@project.amount_pledged) %></p>
+        </td>
+      </tr>
+      <tr>
+        <td id="days-to-go">
+          <p>Days To Go: <%= @project.days_remaining %></p>
+        </td>
+      </tr>
+      <tr>
+          <td id="back-this-project">
+          <% if current_user %>
+            <button class="back-this-project-btn">
+              <%= button_to "Back this Project", new_project_pledge_path(@project), method: :get %>
+            </button>
+            <% else %>
+            <p>
+              Please register or login to back this project.
+            </p>
+            <% end %>
           </td>
         </tr>
-        </table>
+      </td>
     </table>
-    </td>
+  </table>
+</div>
     <div class="short-description">
       <h2><%= @project.short_description %></h2>
     </div>
-  </div>
-
-
-</div>
-</p>
-<% @project.rewards.each do |r| %>
-<div>
-  <%= r.title %><br/>
-  <%= r.description %><br/>
-  <%= number_to_currency(r.amount) %><br/>
-</div>
-
-  <% if current_user %>
-    <%= button_to "Back this Project", new_project_pledge_path(@project), method: :get %>
-  <% else %>
-    <p>
-       register or login to back this project.
-    </p>
-  <% end %>
-<% end %>
-
-<%= link_to "Back", request.referer.present? ? request.referer : root_path %>
 
   <div class="long-description">
     <h3><%= @project.long_description %></h3>
   </div>
 
-</div>
 
-<div class=" show-rewards">
-  <!-- <%= @project.rewards.each %>
-  <p>gjhkguygjhgkjhghkjgkhjgkjhgjhkghjgkjhgkjhgjfghjkjhgfd</p> -->
 
-  <aside>
-    <div class="container" id="pledge-btn">
-      <p><button class="button"><a href="">Pledge Amt. 1 </a></button></p>
-    </div>
-    <div class="container" id="pledge-btn">
-      <p><button class="button"><a href="">Pledge Amt. 2 </a></button></p>
-    </div>
-    <div class="container" id="pledge-btn">
-      <p><button class="button"><a href="">Pledge Amt. 3 </a></button></p>
-    </div>
-    <div class="container" id="pledge-btn">
-      <p><button class="button"><a href="">Pledge Amt. 4 </a></button></p>
-    </div>
-    <div class="container" id="pledge-btn">
-      <p><button class="button"><a href="">Pledge Amt. 5 </a></button></p>
-    </div>
-  </aside>
-
+  <div class="show-rewards">
+  <% @project.rewards.each do |r| %>
+  <div>
+    <%= r.title %><br/>
+    <%= r.description %><br/>
+    <%= number_to_currency(r.amount) %><br/>
   </div>
+    <% if current_user %>
+      <%= button_to "Back this Project", new_project_pledge_path(@project), method: :get %>
+    <% else %>
+      <p>Register or Login to Back This Project!</p>
+    <% end %>
+  <% end %>
+  </div>
+
+    </div>
+  </div>
+</div>
