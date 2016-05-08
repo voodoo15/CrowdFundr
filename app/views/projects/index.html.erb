@@ -7,15 +7,31 @@
 </div>
 <!-- HERO END -->
 
-  <div class="container">
-    <h1 id="index-current-projects">Here's a List of Our Current Projects</h1>
+<div class="container">
+  <h1 id="index-current-projects">Here's a List of Our Current Projects</h1>
 
-    <% @projects.each do |project| %>
-    <table id="project-index-table">
-      <tr>
-        <td id="index-project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
-        <td id="project-img"><img src="http://placekitten.com/400/400"></td>
-    </table>
-    <% end %>
+<!-- SEARCHBAR -->
+  <!-- <div class="searchbar">
+    <form class="search-bar" role="search">
+      <input type="search" placeholder="Enter Search" />
+      <button type="submit">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+      </button>
+    </form>
+  </div> -->
+
+
+  <%= form_tag projects_path, method: :get, authentication: false, id: 'search-form' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+
+  <!-- SEARCHBAR -->
+
+  <!-- CURRENT PROJECTS -->
+  <div class="projects">
+    <%= render @projects %>
   </div>
 </div>
+<!-- CURRENT PROJECTS -->

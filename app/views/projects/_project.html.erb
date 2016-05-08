@@ -1,0 +1,8 @@
+
+  <% @projects.each do |project| %>
+    <table id="project-index-table">
+      <tr>
+        <td id="index-project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
+        <td id="project-img"><img src="http://placekitten.com/400/400"></td>
+    </table>
+  <% end %>

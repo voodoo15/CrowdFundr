@@ -1,7 +1,16 @@
 class ProjectsController < ApplicationController
 
   def index
-    @projects = Project.all
+    @projects = if params[:search]
+      Project.where("LOWER(title) LIKE LOWER(?)", "%#{params[:search]}%")
+    else
+      @projects = Project.all
+    end
+
+    if request.xhr?
+      render @projects
+    end
+
   end
 
   def show
