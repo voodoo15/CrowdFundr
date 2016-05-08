@@ -1,12 +1,12 @@
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
-
+ @import "bbb";
 
 $neue: "helvetica neue", sans serif;
 
 body {
-  @include background(linear-gradient(white, skyblue) left repeat, radial-gradient(red, orange));
+  background-image: url("lightgray-escheresque-1920x1080.png");
   h1, h2, h3, p, article {
     font-family: $neue;
   }
@@ -19,7 +19,7 @@ body {
 
 // HERO UNIT
 .hero {
-  $large-screen: 50em !default;
+  $large-screen: 50em default;
   align-items: center;
   background: url("http://www.thefreedomtrader.com/wp-content/uploads/2015/08/livecrowd.jpg");
   background-position: right;
@@ -28,6 +28,7 @@ body {
   justify-content: center;
   min-height: 25em;
   padding: 2em;
+  padding-left: 50%;
 
   @include media($large-screen) {
     background-position: left;
@@ -36,17 +37,14 @@ body {
   }
 
   .hero-content {
-    max-width: 20em;
+    max-width: 19em;
     min-height: 500px;
     text-align: center;
+
 
     @include media($large-screen) {
       text-align: left;
     }
-  }
-
-  .hero-logo {
-    margin: auto;
   }
 }
 // HERO END
@@ -96,6 +94,10 @@ body {
   }
 }
 
+.simple-pill {
+      @include bbb-simple-style(#14BCC8, white);
+      border-radius: 50px;
+    }
 
 // BUTTON END
 

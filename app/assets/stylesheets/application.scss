@@ -17,30 +17,40 @@
  @import "bourbon";
  @import "grid-settings";
  @import "neat";
+ @import "bbb";
 
+$neue: "Helvetica Neue", Sans Serif;
+
+
+html {
+  width: 100%
+
+}
 // NAV
  .centered-navigation {
-   $base-border-radius: 3px !default;
+   $base-border-radius: 10px !default;
    $dark-gray: #333 !default;
    $large-screen: 53.75em !default;
    $base-font-color: $dark-gray !default;
    $centered-navigation-padding: 1em;
-   $centered-navigation-logo-height: 2em;
-   $centered-navigation-background: #79a1af;
+   $centered-navigation-logo-height: 13em;
+   $centered-navigation-background: #9E9B9A;
    $centered-navigation-color: transparentize($base-font-color, 0.3);
    $centered-navigation-color-hover: $base-font-color;
-   $centered-navigation-height: 60px;
+   $centered-navigation-height: 9rem;
    $centered-navigation-item-padding: 1em;
    $centered-navigation-submenu-padding: 1em;
-   $centered-navigation-submenu-width: 12em;
+   $centered-navigation-submenu-width: 8em;
    $centered-navigation-item-nudge: 2.2em;
    $horizontal-bar-mode: $large-screen;
 
    background-color: $centered-navigation-background;
-   border-bottom: 1px solid darken($centered-navigation-background, 6%);
+   border-bottom: 4px ridge darken(#FF8A65, 3%);
    min-height: $centered-navigation-height;
    width: 100%;
    z-index: 9999;
+   font-family: $neue;
+   font-size: 1.1em;
 
 
  // Mobile view
@@ -53,8 +63,7 @@
 
      img {
        max-height: $centered-navigation-height;
-       opacity: 0.6;
-       padding: 0.8em 0;
+
      }
 
      @include media($horizontal-bar-mode) {
@@ -67,7 +76,7 @@
      display: block;
      float: right;
      line-height: $centered-navigation-height;
-     margin: 0;
+     margin: 0px;
      padding-right: $centered-navigation-submenu-padding;
      text-decoration: none;
      text-transform: uppercase;
@@ -165,7 +174,8 @@
    }
 
    .logo img {
-     margin-bottom: -$centered-navigation-logo-height / 3;
+
+     margin: 0px 2rem (-$centered-navigation-logo-height / 9) 2rem;
      max-height: $centered-navigation-logo-height;
      opacity: 0.6;
    }
@@ -309,6 +319,7 @@
    background: $footer-background;
    padding: ($base-spacing * 2) $gutter;
    width: 100%;
+   margin-top: 10%;
 
    .footer-logo {
      margin-bottom: 2em;
