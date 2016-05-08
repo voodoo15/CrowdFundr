@@ -24,7 +24,6 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user = current_user
-    # @project.image = params[:file] # Assign a file like this, or
 
     if @project.save
       @project.image.url # => '/url/to/file.png'

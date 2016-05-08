@@ -31,58 +31,58 @@ categories.each do |category|
   Category.create!( description:  category )
 end
 
-  User.create!(
-    email:  "mike.thai@gmail.com",
-    first_name: "Mike",
-    last_name:  "Thai",
-    address:  "123 fake street",
-    city:  "Toronto",
-    province:  "ON",
-    postal_code:  "M4K2E5",
-    password:  "Mike",
-    password_confirmation:  "Mike",
-    phone_number:  1234567891
-  )
-
-  Project.create!(
-    title:  "Iphone",
-    short_description:  "Nothin but the best",
-    long_description:  "The iPhone 6 and iPhone 6 Plus are smartphones designed, and marketed by Apple Inc. The devices are part of the iPhone series and were announced on September 9, 2014, and released on September 19, 2014.[16] The iPhone 6 and iPhone 6 Plus jointly serve as successors to the iPhone 5c and iPhone 5s.  The iPhone 6 and iPhone 6 Plus include a number of changes over their predecessor, including models with larger 4.7 and 5.5 inches (120 and 140 mm) displays, a faster processor, upgraded cameras, improved LTE and Wi-Fi connectivity and support for a near field communications-based mobile payments offering",
-    risk_description:  "Possibility of damage to the shipped games and possible slippage of delivery date",
-    end_date:  2017-06-04,
-    category_id:  2,
-    funding_amount:  50000,
-    user_id:  3
-  )
-
-Reward.create!(
-  title:  "Reward 1",
-  description:  "Get 50% If you order before 2017-05-07",
-  amount:  10.0,
-  project_id:  1
-)
-
-Reward.create!(
-  title:  "Reward 2",
-  description:  "Be the first to receive the first Iphone 6 on 2017-08-04",
-  amount:  500.0,
-  project_id:  1
-)
-
-Pledge.create!(
-  amount:  10.0,
-  user_id:  1,
-  reward_id:  1
-)
-
-Pledge.create!(
-  amount:  500.0,
-  user_id:  2,
-  reward_id:  2
-)
-
-Pledge.create!(
-  amount:  10.0,
-  user_id:  2,
-  reward_id:  1
-)
+#   User.create!(
+#     email:  "mike.thai@gmail.com",
+#     first_name: "Mike",
+#     last_name:  "Thai",
+#     address:  "123 fake street",
+#     city:  "Toronto",
+#     province:  "ON",
+#     postal_code:  "M4K2E5",
+#     password:  "Mike",
+#     password_confirmation:  "Mike",
+#     phone_number:  1234567891
+#   )
+#
+#   Project.create!(
+#     title:  "Iphone",
+#     short_description:  "Nothin but the best",
+#     long_description:  "The iPhone 6 and iPhone 6 Plus are smartphones designed, and marketed by Apple Inc. The devices are part of the iPhone series and were announced on September 9, 2014, and released on September 19, 2014.[16] The iPhone 6 and iPhone 6 Plus jointly serve as successors to the iPhone 5c and iPhone 5s.  The iPhone 6 and iPhone 6 Plus include a number of changes over their predecessor, including models with larger 4.7 and 5.5 inches (120 and 140 mm) displays, a faster processor, upgraded cameras, improved LTE and Wi-Fi connectivity and support for a near field communications-based mobile payments offering",
+#     risk_description:  "Possibility of damage to the shipped games and possible slippage of delivery date",
+#     end_date:  DateTime.tomorrow,
+#     category_id:  2,
+#     funding_amount:  50000,
+#     user_id:  1
+#   )
+#
+# Reward.create!(
+#   title:  "Reward 1",
+#   description:  "Get 50% If you order before 2017-05-07",
+#   amount:  10.0,
+#   project_id:  1
+# )
+#
+# Reward.create!(
+#   title:  "Reward 2",
+#   description:  "Be the first to receive the first Iphone 6 on 2017-08-04",
+#   amount:  500.0,
+#   project_id:  1
+# )
+#
+# Pledge.create!(
+#   amount:  10.0,
+#   user_id:  1,
+#   reward_id:  1
+# )
+#
+# Pledge.create!(
+#   amount:  500.0,
+#   user_id:  1,
+#   reward_id:  2
+# )
+#
+# Pledge.create!(
+#   amount:  10.0,
+#   user_id:  2,
+#   reward_id:  1
+# )

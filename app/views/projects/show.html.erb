@@ -6,11 +6,9 @@
 
 <div class="container">
 
-  <!-- <%=# image_tag @project.image %> Mike use this syntax -->
-
   <div class="title-and-creator">
     <h1><%= @project.title %></h1>
-    <h4>by: <%= @project.user.first_name %><%= @project.user.last_name %></h4>
+    <h4>by: <%= @project.owner_name %></h4>
     <p></b> <%= @project.short_description %></p>
   </div>
 
@@ -21,7 +19,8 @@
         <td class="column-one">
           <div class="video">
             <div class="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/gKUI--Tycg8?list=FL-nhrSdZC6vefG4VmW5NR8Q" frameborder="0" allowfullscreen></iframe>
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/gKUI--Tycg8?list=FL-nhrSdZC6vefG4VmW5NR8Q" frameborder="0" allowfullscreen></iframe> -->
+            <%= image_tag @project.image %>
             </div>
           </div>
         </td>
