@@ -21,7 +21,7 @@ class Project < ActiveRecord::Base
   end
 
   def amount_pledged
-    return self.pledges.sum(:amount)
+    return self.pledges.sum(:amount).to_f
   end
 
   def ended?
@@ -34,6 +34,10 @@ class Project < ActiveRecord::Base
 
   def owner_name
     return "#{self.user.first_name} #{self.user.last_name}"
+  end
+
+  def funded?
+    return self.amount_pledged > self.funding_amount
   end
 
   private
