@@ -2,6 +2,13 @@
     <table id="project-index-table">
       <tr>
         <td id="index-project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
-        <td id="project-img"><img src="http://placekitten.com/400/400"></td>
+        <td id="project-img"><img src="<%= project.image %>"></td>
     </table>
   <% end %>
+
+  <!-- <% @projects.each do |project| %>
+  <div class="grid">
+    <div class="grid-box-wrap"><div class="grid-box"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></div></div>
+    <div class="grid-box-wrap"><div class="grid-box"><img src="<%= project.image %>"</div></div>
+  </div>
+<% end %>  -->

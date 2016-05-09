@@ -6,7 +6,7 @@
 $neue: "Helvetica Neue", Sans Serif;
 
 body {
-  background-image: url("lightgray-escheresque-1920x1080.png");
+  background-image: url("white-ecailles-1920x1080");
   h1, h2, h3, p, article {
     font-family: $neue;
   }
@@ -17,8 +17,31 @@ body {
 
 }
 // INDEX PAGE-----------------------------------------------------------------------------------------------
-// HERO
 
+// GRID
+.grid {
+  $grid-gutter: 0rem;
+
+  display: block;
+  flex-flow: row wrap;
+  margin: 0;
+
+  .grid-box-wrap {
+    // flex-basis: 20rem;
+    flex-grow: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+    // padding: 0 $grid-gutter ($grid-gutter * 2);
+  }
+
+  .grid-box {
+    background: whitesmoke;
+    text-align: center;
+    // min-height: 600px;
+  }
+}
+
+// HERO
 .hero {
   $large-screen: 50em default;
   align-items: center;
@@ -49,49 +72,38 @@ body {
 }
 
 // SEARCHBAR
+.search-bar {
 
-form.search-bar {
-  ///////////////////////////////////////////////////////////////////////////////////
-  $base-spacing: 1.5em !default;
-  $base-border-color: gainsboro !default;
-  $base-line-height: 1.5em !default;
-  //////////////////////////////////////////////////////////////////////////////////
+  width: 80%;
+  margin: auto;
+  margin-bottom: 7%;
 
-  $search-bar-border-color: $base-border-color;
-  $search-bar-border: 1px solid $search-bar-border-color;
-  $search-bar-background: lighten($search-bar-border-color, 10%);
+  form {
+    position: relative;
+  }
 
-  position: relative;
-
-  input[type=search] {
-    appearance: none;
-    background-color: white;
-    border: 1px solid $base-border-color;
+  input {
     box-sizing: border-box;
     display: block;
-    font-size: 1em;
-    font-style: italic;
     margin: 0;
-    padding: ($base-spacing / 3) ($base-spacing / 3);
     position: relative;
-    transition: border-color;
     width: 100%;
   }
 
-  button[type=submit] {
+  button {
     @include position(absolute, 0 0 0 null);
-    outline: none;
     padding: 5px 10px;
 
-    img {
-      height: 12px;
-      opacity: 0.7;
-    }
+  }
+
+  img {
+    height: 12px;
+    opacity: 0.7;
   }
 }
 
 #index-current-projects {
-  color: white;
+  color: darkgrey;
   text-align: left;
   text-decoration: underline;
   margin-top: 10%;
@@ -99,8 +111,8 @@ form.search-bar {
 }
 
 #project-index-table {
-  border: 2px solid;
-  border-radius: 10px 10px;
+  // border: 2px solid;
+  // border-radius: 10px 10px;
   // @include outer-container;
   // @include fill-parent();
   @include fill-parent();
@@ -111,7 +123,7 @@ form.search-bar {
     @include span-columns(8);
   }
   td {
-    border: 1px solid;
+    border-bottom: 1px solid;
   }
   #index-project-name-desc {
     @include span-columns(8);
@@ -234,8 +246,9 @@ form.search-bar {
 .choose-category {
   height: 500px;
   border: 1px solid;
-  margin-top: 5%;
-  margin-bottom: 4%;
+  border-radius: 40px 40px;
+  background-color: rgba(84,193,251,0.5);
+  margin: 5%;
   .field {
     text-align: center;
     position: relative;
@@ -245,5 +258,46 @@ form.search-bar {
   h1 {
     text-align: center;
     margin-top: 3%;
+  }
+  #project_category_id {
+      font-size: 15rem;
+  }
+}
+
+.create-project-table {
+  margin: auto;
+  tr {
+    margin-bottom: 5%;
+  }
+  td {
+    @include span-columns(3);
+    font-family: $neue;
+    font-size: 1.6rem;
+    padding-bottom: 5%;
+    input {
+      font-size: 2rem;
+    }
+  }
+}
+
+.pledges {
+  margin: 6%;
+  h1, h2 {
+    text-align: center;
+  }
+  h2 {
+    padding-bottom: 7%;
+  }
+}
+
+#reward {
+  text-align: left;
+  font-family: $neue;
+  font-size: 1.5rem;
+  tr {
+    padding-bottom: 2rem;
+  }
+  input[type=submit] {
+    font-size: 8rem;
   }
 }

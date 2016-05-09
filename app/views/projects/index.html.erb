@@ -20,11 +20,20 @@
 </form> -->
 
 <div class="search-bar">
-  <%= form_tag projects_path, method: :get, authentication: false, id: 'search-form' do %>
+  <%= form_tag projects_path, method: :get, authentication: false, id: 'search-form', role: "search" do %>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search" %>
+    <button type="submit">Search</button>
   <% end %>
 </div>
+
+<!-- <div class="search-bar">
+  <form role="search">
+    <input type="search" placeholder="Enter Search">
+    <button type="submit">
+      <img src="https://raw.githubusercontent.com/thoughtbot/empties/master/source/images/placeholder_small.png" alt="Search Icon">
+    </button>
+  </form>
+</div> -->
 
 
   <!-- SEARCHBAR -->
