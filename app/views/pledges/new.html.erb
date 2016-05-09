@@ -1,26 +1,27 @@
-<h1>Back a Project</h1>
-<p>
-  You are going to be backing the following project:  <%= @project.title %>
-</p>
+<div class="container pledges">
+  <h1>Back a Project</h1>
+  <h2>
+    How much would you like to pledge to the project, "<%= @project.title %>"?
+  </h2>
 
-<%  @project.rewards.each do |r| %>
-  <div class="reward">
-    Reward:  <%= r.title %><br/>
-    Description:  <%= r.description %><br/>
-    Pledge Amount:  <%= number_to_currency(r.amount) %><br/>
+  <%  @project.rewards.each do |r| %>
+    <table id="reward">
+      <tr><th>Reward:</th><td><%= r.title %></td></br><tr>
+      <tr><th>Description:</th>  <td><%= r.description %></td></br><tr>
+      <tr><th>Pledge Amount:</th>  <td><%= number_to_currency(r.amount) %></td></br><tr>
 
-  <% if current_user %>
-      <%= form_for [@project, @pledge] do |f| %>
-        <%= f.hidden_field :amount, :value => r.amount %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.hidden_field :reward_id, :value => r.id %>
-        <%= f.submit %>
-      <% end %>
-    <% else %>
-    <p>
-      Please register or login to back this project.
-    </p>
+    <% if current_user %>
+        <%= form_for [@project, @pledge] do |f| %>
+          <%= f.hidden_field :amount, :value => r.amount %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.hidden_field :reward_id, :value => r.id %>
+          <td><%= f.submit %></td>
+        <% end %>
+      <% else %>
+      <p>
+        Please register or login to back this project.
+      </p>
+    <% end %>
   <% end %>
-<% end %>
-  </div>
-<%= link_to "Back", request.referer.present? ? request.referer : root_path %>
+</table>
+</div>

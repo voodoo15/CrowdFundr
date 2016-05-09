@@ -7,10 +7,10 @@ class ProjectsController < ApplicationController
       Project.all
     end
 
-    if request.xhr?
-      render @projects
+    respond_to do |format|
+      format.html
+      format.js
     end
-
   end
 
   def show

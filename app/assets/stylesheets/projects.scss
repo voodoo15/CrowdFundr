@@ -1,12 +1,12 @@
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
- @import "bbb";
+@import "bbb";
 
-$neue: "helvetica neue", sans serif;
+$neue: "Helvetica Neue", Sans Serif;
 
 body {
-  background-image: url("lightgray-escheresque-1920x1080.png");
+  background-image: url("white-ecailles-1920x1080");
   h1, h2, h3, p, article {
     font-family: $neue;
   }
@@ -14,10 +14,34 @@ body {
 
 .container {
   @include outer-container;
-}
-// INDEX PAGE
 
-// HERO UNIT
+}
+// INDEX PAGE-----------------------------------------------------------------------------------------------
+
+// GRID
+.grid {
+  $grid-gutter: 0rem;
+
+  display: block;
+  flex-flow: row wrap;
+  margin: 0;
+
+  .grid-box-wrap {
+    // flex-basis: 20rem;
+    flex-grow: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+    // padding: 0 $grid-gutter ($grid-gutter * 2);
+  }
+
+  .grid-box {
+    background: whitesmoke;
+    text-align: center;
+    // min-height: 600px;
+  }
+}
+
+// HERO
 .hero {
   $large-screen: 50em default;
   align-items: center;
@@ -41,88 +65,65 @@ body {
     min-height: 500px;
     text-align: center;
 
-
     @include media($large-screen) {
       text-align: left;
     }
   }
 }
-// HERO END
 
 // SEARCHBAR
+.search-bar {
 
+  width: 80%;
+  margin: auto;
+  margin-bottom: 7%;
 
-.projects_path {
+  form {
+    position: relative;
+  }
 
-    margin-bottom: 4%;
-  ///////////////////////////////////////////////////////////////////////////////////
-  $base-spacing: 1.5em !default;
-  $base-border-color: gainsboro !default;
-  $base-line-height: 1.5em !default;
-  //////////////////////////////////////////////////////////////////////////////////
-
-  $search-bar-border-color: $base-border-color;
-  $search-bar-border: 1px solid $search-bar-border-color;
-  $search-bar-background: lighten($search-bar-border-color, 10%);
-
-  position: relative;
-
-  input[type=search] {
-    appearance: none;
-    background-color: white;
-    border: 1px solid $base-border-color;
+  input {
     box-sizing: border-box;
     display: block;
-    font-size: 1em;
-    font-style: italic;
     margin: 0;
-    padding: ($base-spacing / 3) ($base-spacing / 3);
     position: relative;
-    transition: border-color;
     width: 100%;
   }
 
-  button[type=submit] {
+  button {
     @include position(absolute, 0 0 0 null);
-    outline: none;
     padding: 5px 10px;
 
-    img {
-      height: 12px;
-      opacity: 0.7;
-    }
+  }
+
+  img {
+    height: 12px;
+    opacity: 0.7;
   }
 }
 
-.simple-pill {
-      @include bbb-simple-style(#14BCC8, white);
-      border-radius: 50px;
-    }
-
-// BUTTON END
-
 #index-current-projects {
-  text-align: center;
+  color: darkgrey;
+  text-align: left;
+  text-decoration: underline;
   margin-top: 10%;
   margin-bottom: 10%;
 }
 
 #project-index-table {
-  border: 2px solid;
-  border-radius: 10px 10px;
+  // border: 2px solid;
+  // border-radius: 10px 10px;
   // @include outer-container;
   // @include fill-parent();
   @include fill-parent();
-
 
   tr {
     @include row(table);
     @include fill-parent();
     @include span-columns(8);
   }
-
   td {
-    border: 1px solid;
+    border-bottom: 1px solid;
   }
   #index-project-name-desc {
     @include span-columns(8);
@@ -136,12 +137,13 @@ body {
   }
 }
 
-// PROJECT SHOW
+// PROJECT SHOW PAGE----------------------------------------------------------------------------------------
 
-.back-btn {
-  margin-top: 4%;
-  margin-left: 3%;
-}
+.simple-pill {
+      @include bbb-simple-style(#14BCC8, white);
+      border-radius: 50px;
+    }
+
 .title-and-creator {
   margin-top: 5%;
   text-align: center;
@@ -159,7 +161,6 @@ body {
   td {
     border: solid 1px;
   }
-
   .main-project-table {
     @include fill-parent();
     text-align: center;
@@ -199,7 +200,6 @@ body {
     }
   }
 }
-
 .short-description {
   text-align: center;
 }
@@ -224,37 +224,31 @@ body {
     text-decoration: underline;
     font-size: 1.4rem;
   }
-
-
-  #pledge-btn {
-    height: 100px;
-    width: 200px;
-    border-top: 1px solid;
-    border-left: 4px solid;
-    }
 }
 
-// VIDEO
-.video-wrapper {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
-  position: relative;
+// EMBEDDED VIDEO ---- will add video upload functionality soon to be embedded in main project 'long description' field
 
-  embed,
-  object,
-  iframe {
-    @include position(absolute, 0 null null 0);
-    @include size(100%);
-  }
-}
+// .video-wrapper {
+//   height: 0;
+//   overflow: hidden;
+//   padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+//   position: relative;
+//   embed,
+//   object,
+//   iframe {
+//     @include position(absolute, 0 null null 0);
+//     @include size(100%);
+//   }
+// }
 
-// NEW PROJECT
+// CREATE PROJECT PAGE-------------------------------------------------------------------------------------------------
+
 .choose-category {
   height: 500px;
   border: 1px solid;
-  margin-top: 5%;
-  margin-bottom: 4%;
+  border-radius: 40px 40px;
+  background-color: rgba(84,193,251,0.5);
+  margin: 5%;
   .field {
     text-align: center;
     position: relative;
@@ -265,7 +259,45 @@ body {
     text-align: center;
     margin-top: 3%;
   }
-.create-project-form {
-
+  #project_category_id {
+      font-size: 15rem;
+  }
 }
+
+.create-project-table {
+  margin: auto;
+  tr {
+    margin-bottom: 5%;
+  }
+  td {
+    @include span-columns(3);
+    font-family: $neue;
+    font-size: 1.6rem;
+    padding-bottom: 5%;
+    input {
+      font-size: 2rem;
+    }
+  }
+}
+
+.pledges {
+  margin: 6%;
+  h1, h2 {
+    text-align: center;
+  }
+  h2 {
+    padding-bottom: 7%;
+  }
+}
+
+#reward {
+  text-align: left;
+  font-family: $neue;
+  font-size: 1.5rem;
+  tr {
+    padding-bottom: 2rem;
+  }
+  input[type=submit] {
+    font-size: 8rem;
+  }
 }

@@ -1,66 +1,88 @@
+<h1>Create Your Profile:</h1>
 
 <div class="container">
-
-  <%= form_for @user do |f| %>
+    <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
+
     <div class="flash-error">
-        <span>
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-          <ul>
+      <span>
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
           <% @user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
+          <% end %>
     <% end %>
-  <% end %>
-</span>
-</ul>
-  </div>
+        </span>
+        </ul>
+    </div>
 
-
-  <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email %>
-  </div>
-  <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-  </div>
-  <div class="field">
-      <%= f.label :password_confirmation %> <p>(Must be Longer than 3 Characters) </p> <br />
-      <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name %><br />
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number  %><br />
-    <%= f.number_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :address  %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :province %><br />
-    <%= f.select :province, options_for_select("British Columbia":"BC", "Alberta":"AB", "Saskatchewan":"SK",
-                                               "Manitoba":"MB", "Ontario":"ON", "Quebec":"QC", "New Brunswick":"NB",
-                                               "Newfoundland":"NL", "Nova Scotia":"NS", "Prince Edward Island":"PE",
-                                               "Northwest Territories":"NT", "Yukon":"YT", "Nunavut":"NU") %>
-  </div>
-  <div class="field"><br />
-    <%= f.label :postal_code %><p> (For example "M4K2E5") </p> <br />
-    <%= f.text_field :postal_code %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <% end %>
+  <div class="create-user-form">
+    <aside>
+          <%= f.label :email %><br />
+    </aside>
+    <article>
+          <%= f.email_field :email %>
+    </article>
+    <aside>
+          <%= f.label :password %><br />
+    </aside>
+    <article>
+          <%= f.password_field :password %>
+    </article>
+    <aside>
+          <%= f.label :password_confirmation %><br />
+    </aside>
+    <article>
+          <%= f.password_field :password_confirmation %>
+    </article>
+    <aside>
+          <%= f.label :first_name %><br />
+    </aside>
+    <article>
+          <%= f.text_field :first_name %><br />
+    </article>
+    <aside>
+        <%= f.label :last_name %><br />
+    </aside>
+    <article>
+        <%= f.text_field :last_name %>
+    </article>
+    <aside>
+        <%= f.label :phone_number  %><br />
+    </aside>
+    <article>
+        <%= f.number_field :phone_number %>
+    </article>
+    <aside>
+        <%= f.label :address  %><br />
+    </aside>
+    <article>
+        <%= f.text_field :address %>
+    </article>
+    <aside>
+        <%= f.label :city %><br />
+    </aside>
+    <article>
+        <%= f.text_field :city %>
+    </article>
+    <aside>
+        <%= f.label :province %><br />
+    </aside>
+    <article>
+        <%= f.select :province, options_for_select("British Columbia":"BC", "Alberta":"AB", "Saskatchewan":"SK",
+                                                   "Manitoba":"MB", "Ontario":"ON", "Quebec":"QC", "New Brunswick":"NB",
+                                                   "Newfoundland":"NL", "Nova Scotia":"NS", "Prince Edward Island":"PE",
+                                                   "Northwest Territories":"NT", "Yukon":"YT", "Nunavut":"NU") %>
+    </article>
+    <aside>
+        <%= f.label :postal_code %> (ex. "M4K2E5") <br />
+    </aside>
+    <article>
+        <%= f.text_field :postal_code %>
+    </article>
+    <aside>
+        <%= f.submit %>
+    </aside>
+      <% end %>
+    </aside>
 </div>

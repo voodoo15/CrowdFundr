@@ -2,6 +2,17 @@
     <table id="project-index-table">
       <tr>
         <td id="index-project-name-desc"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></td>
+<<<<<<< HEAD
         <td id="project-img"><img src="http://lorempixel.com/400/400/nightlife/"></td>
+=======
+        <td id="project-img"><img src="<%= project.image %>"></td>
+>>>>>>> f254a05ae14ae1778883e9a2ee1aeae25a9ee6f5
     </table>
   <% end %>
+
+  <!-- <% @projects.each do |project| %>
+  <div class="grid">
+    <div class="grid-box-wrap"><div class="grid-box"><p><%= link_to project.title, project_path(project.id) %></p><p><%= project.short_description %></p></div></div>
+    <div class="grid-box-wrap"><div class="grid-box"><img src="<%= project.image %>"</div></div>
+  </div>
+<% end %>  -->

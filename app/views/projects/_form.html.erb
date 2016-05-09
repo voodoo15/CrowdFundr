@@ -13,7 +13,7 @@
   <% end %>
 
 
-<div class="container choose-category">
+<div class="choose-category">
   <h1>What Type of Project Would You Like to Create?</h1>
   <div class="field">
     Category<br/>
@@ -21,56 +21,66 @@
   </div>
 </div>
 
-<div class="create-project-form">
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+<div class="container">
 
-  <div class="field">
-    <%= f.label :short_description %>
-    <%= f.text_field :short_description%>
-  </div>
+  <table class="create-project-table">
+    <tr>
+      <td><%= f.label :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
 
-  <div class="field">
-    <%= f.label :long_description %>
-    <%= f.text_area :long_description %>
-  </div>
+    <tr>
+      <td><%= f.label :short_description %></td>
+      <td><%= f.text_field :short_description%></td>
 
-  <div class="field">
-    <%= f.label :risk_description %>
-    <%= f.telephone_field :risk_description %>
-  </div>
+    </tr>
 
+    <tr>
+      <td><%= f.label :long_description %></td>
+      <td><%= f.text_area :long_description %></td>
 
-  <div class="field">
-    <%= f.label :end_date %>
-    <%= f.date_field :end_date %>
-  </div>
+    </tr>
 
-  <div class="field">
-    <%= f.label :funding_amount %>
-    <%= f.number_field :funding_amount %>
-  </div>
+    <tr>
+      <td><%= f.label :risk_description %></td>
+      <td><%= f.telephone_field :risk_description %></td>
 
-  <%= f.fields_for :rewards, [Reward.new, Reward.new, Reward.new] do |reward| %>
-  <div class="field">
-    <%= reward.label :Reward_title %>
-    <%= reward.text_field :title %>
-  </div>
+    </tr>
 
-  <div class="field">
-    <%= reward.label :Reward_description %>
-    <%= reward.text_area :description %>
-  </div>
+    <tr>
+      <td><%= f.label :end_date %></td>
+      <td><%= f.date_field :end_date %></td>
 
-  <div class="field">
-    <%= reward.label :Reward_amount %>
-    <%= reward.number_field :amount %>
-  </div>
-  <% end %>
+    </tr>
 
-  <div class="actions">
+    <tr>
+      <td><%= f.label :funding_amount %></td>
+      <td><%= f.number_field :funding_amount %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :image %></td>
+      <td><%= f.file_field :image %></td>
+    </tr>
+
+    <tr>
+      <%= f.fields_for :rewards, [Reward.new, Reward.new, Reward.new] do |reward| %>
+      <td><%= reward.label :Reward_title %></td>
+      <td><%= reward.text_field :title %>  </td>
+    </tr>
+
+    <tr>
+      <td><%= reward.label :Reward_description %></td>
+      <td><%= reward.text_area :description %></td>
+    </tr>
+
+    <tr>
+      <td><%= reward.label :Reward_amount %></td>
+      <td><%= reward.number_field :amount %></td>
+    </tr>
+
+    <% end %>
+  </table>
+  <div class="actions" style="text-align: center">
     <%= f.submit %>
   </div>
   <% end %>

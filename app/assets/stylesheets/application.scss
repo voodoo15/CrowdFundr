@@ -15,7 +15,7 @@
  */
 
  @import "bourbon";
- @import "grid-settings";
+ // @import "grid-settings";
  @import "neat";
  @import "bbb";
 
@@ -34,17 +34,17 @@ html {
    $base-font-color: $dark-gray !default;
    $centered-navigation-padding: 1em;
    $centered-navigation-logo-height: 13em;
-   $centered-navigation-background: #9E9B9A;
+   $centered-navigation-background: url("lightgray-escheresque-1920x1080.png");
    $centered-navigation-color: transparentize($base-font-color, 0.3);
    $centered-navigation-color-hover: $base-font-color;
-   $centered-navigation-height: 9rem;
+   $centered-navigation-height: 7rem;
    $centered-navigation-item-padding: 1em;
    $centered-navigation-submenu-padding: 1em;
    $centered-navigation-submenu-width: 8em;
    $centered-navigation-item-nudge: 2.2em;
    $horizontal-bar-mode: $large-screen;
 
-   background-color: $centered-navigation-background;
+   background-image: $centered-navigation-background;
    border-bottom: 4px ridge darken(#FF8A65, 3%);
    min-height: $centered-navigation-height;
    width: 100%;
@@ -134,7 +134,7 @@ html {
    ul li.nav-link {
      background: $centered-navigation-background;
      display: block;
-     line-height: $centered-navigation-height;
+     line-height: 3rem;
      overflow: hidden;
      padding-right: $centered-navigation-submenu-padding;
      text-align: right;
@@ -288,7 +288,8 @@ html {
        }
 
        a {
-         background-color: darken($centered-navigation-background, 3%);
+        //  background-color: darken($centered-navigation-background, 3%);
+         background-color: grey;
          display: inline-block;
          text-align: right;
          text-decoration: none;

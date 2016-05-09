@@ -34,21 +34,11 @@ $(document).on('ready page:load', function() {
    event.preventDefault();
    var searchValue = document.getElementById('search').value;
 
-   var xhr = new XMLHttpRequest();
-   xhr.onload = display_search_results;
-   xhr.open('GET', '/projects?search=' + searchValue, true);
-   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-   xhr.send();
- });
-
   $('#search-form').submit(function(event){
       event.preventDefault();
       var searchValue = $('#search').val();
 
-      $.get('/projects?search=' + searchValue)
-        .done(function(data){
-          console.log(data);
-            $('#projects').html(data);
+        $.getScript('/projects?search=' + searchValue);
     });
   });
 });
