@@ -1,9 +1,9 @@
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
- @import "bbb";
+@import "bbb";
 
-$neue: "helvetica neue", sans serif;
+$neue: "Helvetica Neue", Sans Serif;
 
 body {
   background-image: url("lightgray-escheresque-1920x1080.png");
@@ -14,10 +14,11 @@ body {
 
 .container {
   @include outer-container;
-}
-// INDEX PAGE
 
-// HERO UNIT
+}
+// INDEX PAGE-----------------------------------------------------------------------------------------------
+// HERO
+
 .hero {
   $large-screen: 50em default;
   align-items: center;
@@ -41,16 +42,13 @@ body {
     min-height: 500px;
     text-align: center;
 
-
     @include media($large-screen) {
       text-align: left;
     }
   }
 }
-// HERO END
 
 // SEARCHBAR
-
 
 form.search-bar {
   ///////////////////////////////////////////////////////////////////////////////////
@@ -92,13 +90,6 @@ form.search-bar {
   }
 }
 
-.simple-pill {
-      @include bbb-simple-style(#14BCC8, white);
-      border-radius: 50px;
-    }
-
-// BUTTON END
-
 #index-current-projects {
   color: white;
   text-align: left;
@@ -114,13 +105,11 @@ form.search-bar {
   // @include fill-parent();
   @include fill-parent();
 
-
   tr {
     @include row(table);
     @include fill-parent();
     @include span-columns(8);
   }
-
   td {
     border: 1px solid;
   }
@@ -136,12 +125,13 @@ form.search-bar {
   }
 }
 
-// PROJECT SHOW
+// PROJECT SHOW PAGE----------------------------------------------------------------------------------------
 
-.back-btn {
-  margin-top: 4%;
-  margin-left: 3%;
-}
+.simple-pill {
+      @include bbb-simple-style(#14BCC8, white);
+      border-radius: 50px;
+    }
+
 .title-and-creator {
   margin-top: 5%;
   text-align: center;
@@ -159,7 +149,6 @@ form.search-bar {
   td {
     border: solid 1px;
   }
-
   .main-project-table {
     @include fill-parent();
     text-align: center;
@@ -199,7 +188,6 @@ form.search-bar {
     }
   }
 }
-
 .short-description {
   text-align: center;
 }
@@ -224,32 +212,25 @@ form.search-bar {
     text-decoration: underline;
     font-size: 1.4rem;
   }
-
-
-  #pledge-btn {
-    height: 100px;
-    width: 200px;
-    border-top: 1px solid;
-    border-left: 4px solid;
-    }
 }
 
-// VIDEO
-.video-wrapper {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
-  position: relative;
+// EMBEDDED VIDEO ---- will add video upload functionality soon to be embedded in main project 'long description' field
 
-  embed,
-  object,
-  iframe {
-    @include position(absolute, 0 null null 0);
-    @include size(100%);
-  }
-}
+// .video-wrapper {
+//   height: 0;
+//   overflow: hidden;
+//   padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+//   position: relative;
+//   embed,
+//   object,
+//   iframe {
+//     @include position(absolute, 0 null null 0);
+//     @include size(100%);
+//   }
+// }
 
-// NEW PROJECT
+// CREATE PROJECT PAGE-------------------------------------------------------------------------------------------------
+
 .choose-category {
   height: 500px;
   border: 1px solid;
@@ -265,7 +246,4 @@ form.search-bar {
     text-align: center;
     margin-top: 3%;
   }
-.create-project-form {
-
-}
 }

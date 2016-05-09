@@ -1,6 +1,20 @@
 @import "bourbon";
-@import "grid-settings";
+@import "table-grid-settings";
 @import "neat";
+
+$neue: "Helvetica Neue", Sans Serif;
+
+body {
+  background-image: url("lightgray-escheresque-1920x1080.png");
+}
+
+h1, h2, h3, p, article aside {
+  font-family: $neue;
+}
+
+.container {
+  @include outer-container;
+}
 
 // Errors
 $base-spacing: 1.5em !default;
@@ -29,5 +43,53 @@ $flashes: (
         color: shade($color, 90%);
       }
     }
+  }
+}
+
+.create-user-form {
+  @include outer-container;
+  @include row(2);
+
+  h1 {
+    display: block;
+    position: relative;
+    left: 200px;
+    top: 2rem;
+    padding-bottom: 1.9rem;
+  }
+
+  aside {
+    @include span-columns(5);
+    margin: 1.5rem 0 1.5rem 0;
+    // font-weight: bold;
+    font-family: $neue;
+
+  }
+  article {
+    @include span-columns(5);
+    font-family: $neue;
+  }
+}
+
+.new-session-form {
+  @include outer-container;
+  font-family: $neue;
+  h1 {
+    margin-top: 6%;
+  }
+  aside {
+    // @include span-columns(5);
+    margin: 1.5rem 0 1rem 0;
+  }
+  article {
+    // @include span-columns(5);
+  }
+
+}
+.forgot-password-form {
+  margin-top: 5%;
+  font-family: $neue;
+  aside {
+    margin: 1.5rem 0 1rem 0;
   }
 }
