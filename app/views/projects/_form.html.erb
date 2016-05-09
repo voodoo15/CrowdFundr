@@ -57,6 +57,10 @@
       <td><%= f.label :funding_amount %></td>
       <td><%= f.number_field :funding_amount %></td>
     </tr>
+    <tr>
+      <td><%= f.label :image %></td>
+      <td><%= f.file_field :image %></td>
+    </tr>
 
     <tr>
       <%= f.fields_for :rewards, [Reward.new, Reward.new, Reward.new] do |reward| %>
