@@ -52,9 +52,7 @@ body {
 // SEARCHBAR
 
 
-.projects_path {
-
-    margin-bottom: 4%;
+form.search-bar {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-spacing: 1.5em !default;
   $base-border-color: gainsboro !default;
@@ -102,7 +100,9 @@ body {
 // BUTTON END
 
 #index-current-projects {
-  text-align: center;
+  color: white;
+  text-align: left;
+  text-decoration: underline;
   margin-top: 10%;
   margin-bottom: 10%;
 }
