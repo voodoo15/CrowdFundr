@@ -1,10 +1,3 @@
-@import "bourbon";
-@import "grid-settings";
-@import "neat";
-@import "bbb";
-
-$neue: "Helvetica Neue", Sans Serif;
-
 body {
   background-image: url("white-ecailles-1920x1080");
   h1, h2, h3, p, article {
@@ -14,8 +7,8 @@ body {
 
 .container {
   @include outer-container;
-
 }
+
 // INDEX PAGE-----------------------------------------------------------------------------------------------
 
 // GRID
@@ -72,7 +65,7 @@ body {
 }
 
 // SEARCHBAR
-.search-bar {
+#search-bar {
 
   width: 80%;
   margin: auto;
@@ -88,12 +81,13 @@ body {
     margin: 0;
     position: relative;
     width: 100%;
+    height: 4em;
   }
 
   button {
     @include position(absolute, 0 0 0 null);
     padding: 5px 10px;
-
+    height: 4em;
   }
 
   img {
@@ -139,17 +133,12 @@ body {
 
 // PROJECT SHOW PAGE----------------------------------------------------------------------------------------
 
-.simple-pill {
-      @include bbb-simple-style(#14BCC8, white);
-      border-radius: 50px;
-    }
 
 .title-and-creator {
   margin-top: 5%;
   text-align: center;
 
   h1 {
-  @include text-decoration(underline double rgb(124,213,224));
   text-decoration: underline;
   }
 }

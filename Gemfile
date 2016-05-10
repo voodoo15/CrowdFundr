@@ -62,6 +62,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'bourbon'
+  gem 'bourbon', '5.0.0.beta.5'
   gem 'neat'
 end
