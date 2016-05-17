@@ -1,25 +1,134 @@
-== README
+== We are going to implement Kickstarter–all of it. Good luck :-)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+There is more work here than any one person can do and probably more work than a group of 4 could do over the course of several weeks. This is what a real project is like. As such, you will need to figure out what the core functionality is, work in groups, and prioritize the user stories in order to release a Minimal Viable Product at the end of the week.
 
-Things you may want to cover:
+Learning Objectives
 
-* Ruby version
+To get a feel for what it is like to work on a real project
+To become more comfortable with integrating JavaScript into a Rails application
+Gain more experience using jQuery and AJAX to make a site more responsive
+Gain some experience working in pairs or groups on a software project
+To learn how to prioritize user stories in order to deliver a minimal viable product
+Some General Business Rules
 
-* System dependencies
+Every application has business rules. They are what differentiates an application from its competition. Below are some general business rules that must be applied to all projects listed on CrowdFunder.
 
-* Configuration
+A project expires when it hits its funding deadline, not its funding goal
+A project owner can only delete a project if it has not raised any money
+Projects should continue accepting funding beyond their funding goal
+User Stories
 
-* Database creation
+Below are the main user stories for this project. There are far too many stories than can be completed in one week, so you will need to prioritize what you will do.
 
-* Database initialization
+On a real project, the Customer or the Product Owner will determine the priority and group stories into iterations. As such, the stories below have been grouped to give you a general idea of their importance. In addition, there is a project backlog (non-prioritized stories) at the end full of extra stuff that can be added if you have time. The stories in bold require AJAX in order to considered complete.
 
-* How to run the test suite
+Iteration 1
 
-* Services (job queues, cache servers, search engines, etc.)
+As a Project Owner, I want to be able to create a new project with a title and a description
+As a Project Owner, I want to set a goal for my project
+As a Project Owner, I want to set a funding period (start date, finish date) for my project
+As a Project Owner, I want the ability to set funding rewards with a description of what backers will receive for each reward
+As a Backer, I want to be able to back a project at a certain reward
+should be able to click on a reward and have it submitted with no page refresh
+once submitted, upon success, the amount raised should update
+Iteration 2
 
-* Deployment instructions
+As a Project Owner, I want to see how many days are left before my project is done
+As a Backer, When viewing a project, it should be very clear whether I have backed the project or not
+As a Project Owner, I want to see the total amount of money raised as of right now
+As a Backer, I want to see all of the projects that I have backed
+As a Backer, I want to see the total amount of money I have spent on projects
+Iteration 3
+
+As a Project Owner, To help people find my project, I want the ability to add it to a category
+As a Project Owner, To help people find my project, I want the ability to add various tags to my project
+As a Backer, I want to be able to see all projects in a particular category
+use infinite scrolling
+As a Backer, I want the ability to see all the projects associated with a particular tag
+use infinite scrolling
+As a Backer, I want to see who the owner of a project is
+Iteration 4
+
+As a Backer, I want to be able to leave comments on a project
+The comment should be submitted via AJAX
+As a Backer, I want the ability to leave comments on a project owner
+The comment should be submitted via AJAX
+Iteration 5
+
+As a Project Owner, I want to see how many people have funded my project at each reward
+As a Backer, I want to be notified when any projects I am backing meet their goal and are fully funded
+Story Backlog
+
+As a user, I would like to see how many projects have been successfully funded
+As a user, I would like to see how many total people have funded projects
+As a user, I would like to see how many projects have been funded in a particular category
+As a user, I would like to see how much money has been raised in total
+As a user, I would like to see how much money has been raised for a particular category
+As a user, I would like to see the percentage of funded versus failed projects
+As a user, I want the ability to sign in/up with Crowdfunder using my gmail or Facebook account
+As a Project Owner, I want the ability to add updates my project
+As a Project Owner, I want the ability to notify people that I have added an update
+As a Project Owner, I would like the ability to set limits on how many people can fund at certain rewards
+As a Project Owner, I want to have some method of contacting backers individually
+As a Project Owner, I want to have some method of contacting all of my backers as a group
+As a Project Owner, I want to have a bio section where people can look me up and see all the projects I have created
+JavaScript/AJAX
+
+Listed below are some of the areas of the application in which JavaScript and/or AJAX is to be used. Feel free to use JS in other areas of your application if you feel that it would be useful (or fun).
+
+When a backer funds a project, there should be a nice highlighted flash message that appears at the top of the screen and fades out after 20 seconds or so
+backing a project should be AJAX and not require a page refresh
+Leaving a comment for a project should involve AJAX
+After someone backs a project, the metrics (how many backers there are, how many backers at the rewards, etc) should update without needing a page refresh
+listing of comments, and backers, should use infinite scrolling instead of paging
+When searching for a project by name, the app should use autocomplete/typeahead
+Approach
+
+Step 1 - Finding a Group
+
+Find a partner. The best way to work on this project is in groups of at least two. But, instead of each person working on separate things, have each of you work on the same thing on the same computer. This is a case of going faster by going slower. Two brains will be better than one and two pairs of eyes have a better chance of catching errors that one set of eyes may miss.
+
+Have one person typing and creating code and the other person watching and thinking about how the code that is being created will fit into the larger project.
+
+Step 2 - Prioritizing User Stories
+
+Prioritize the stories and figure out what you should work on first. There are a lot of stories and you won't have time to implement them all. You need to decide what stories you are ignoring. Once you have the stories prioritized and you know what you will work on first, make yourself a list.
+
+Pick the first story and break it down into smaller tasks. Make a small checklist of what needs to be done before the story is considered done.
+
+Step 3 - Screen Mockups
+
+Just like for Seatyourself, create a few simple, quick screen UI mock ups. Don't spend too much time figuring out what your application will look like, but make sure you have a general feel for what pages you will have and what those pages will look like. Remember, this will change, so you just looking for a high level overview in this step. Also, remember to base the pages that you create on the stories that you will be implementing from step 2.
+
+Step 4 - setting up Github Collaborators
+
+Create a Github repository and add your team/pair as a collaborator.
+
+From your Github repository for your Crowdfunder project, click on the settings link.
+
+Settings
+
+Click on Collaborators
+
+Collaborators
+
+Enter the Github id for your pair
+
+Enter Collaborator
+
+All the collaborators will show up on the collaborators page.
+
+Step 5 - Implementation
+
+Implement the application. Have fun, see how much you can get done, and use this time to learn more about the things you are uncertain about.
+
+Remember, work on the hard parts first. It is far too tempting to spend time working on the design, the authentication, or other parts that you already know how to do. I strongly suggest working on the parts that you don't understand and spending the majority of your time implementing those features. The aesthetics really can wait until the last day.
+
+Start by building a few models, controllers and forms. Then, once your forms, controllers, and models are all working together, then start to integrate AJAX and jQuery. Give yourself lots of time to work through the AJAX and all the cool interactivity in this application.
+
+Step 6 - UI Design
+
+For the UI, I would suggest using Foundation instead of Twitter Bootstrap. There is a really nice gem that integrates Foundation into an existing Rails application and works really well with SASS and Rails. There are also a bunch of really nice templates that can are easy to implement along with a ton of documentation.
 
 * ...
 
