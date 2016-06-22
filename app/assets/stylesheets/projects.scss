@@ -20,17 +20,14 @@ body {
   margin: 0;
 
   .grid-box-wrap {
-    // flex-basis: 20rem;
     flex-grow: 1;
     flex-shrink: 0;
     overflow: hidden;
-    // padding: 0 $grid-gutter ($grid-gutter * 2);
   }
 
   .grid-box {
     background: whitesmoke;
     text-align: center;
-    // min-height: 600px;
   }
 }
 
@@ -38,7 +35,7 @@ body {
 .hero {
   $large-screen: 50em default;
   align-items: center;
-  background: url("http://www.thefreedomtrader.com/wp-content/uploads/2015/08/livecrowd.jpg");
+  background: url("https://d13yacurqjgara.cloudfront.net/users/20752/screenshots/2098174/attachments/378749/nodes-1.png");
   background-position: right;
   background-size: none;
   display: flex;

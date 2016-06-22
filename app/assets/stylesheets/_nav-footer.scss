@@ -8,7 +8,7 @@ $neue: "Helvetica Neue", Sans Serif;
    $base-font-color: $dark-gray !default;
    $centered-navigation-padding: 1em;
    $centered-navigation-logo-height: 13em;
-   $centered-navigation-background: url("lightgray-escheresque-1920x1080.png");
+   $centered-navigation-background: white;
    $centered-navigation-color: transparentize($base-font-color, 0.3);
    $centered-navigation-color-hover: $base-font-color;
    $centered-navigation-height: 7rem;
@@ -18,10 +18,14 @@ $neue: "Helvetica Neue", Sans Serif;
    $centered-navigation-item-nudge: 2.2em;
    $horizontal-bar-mode: $large-screen;
 
-   background-image: $centered-navigation-background;
-   border-bottom: 4px ridge darken(#FF8A65, 3%);
-   min-height: $centered-navigation-height;
+  background-image: linear-gradient(darkslategrey, #0f253c);
+  opacity: 0.9;
+  background-color: $centered-navigation-background;
+   border-bottom: 15px ridge grey;
+  //  min-height: $centered-navigation-height;
+  height: 150px;
    width: 100%;
+   margin: auto;
    z-index: 9999;
    font-family: $neue;
    font-size: 1.1em;
@@ -116,7 +120,7 @@ $neue: "Helvetica Neue", Sans Serif;
      z-index: 9999;
 
      a {
-       color: $centered-navigation-color;
+       color: bisque;
        display: inline-block;
        outline: none;
        text-decoration: none;
