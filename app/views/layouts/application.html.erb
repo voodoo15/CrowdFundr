@@ -33,7 +33,7 @@
         <li id="js-centered-more" class="nav-link more"><a href="javascript:void(0)">Hi, <%= current_user.email %>!</a>
           <ul class="submenu">
             <li><a href="<%= user_path(current_user.id) %>">My Profile</a></li>
-            <li><%= link_to "Logout", :logout, method: :post %></a></li>
+            <li><%= link_to "Logout", :logout, method: :post %></li>
           </ul>
 
         </li>
@@ -46,21 +46,37 @@
   </div>
 </header> -->
 
+<!-- Nav Dropdown Menu -->
+
+<% if current_user %>
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
+  <li><a href="<%= user_path(current_user.id) %>">Profile</a></li>
+  <li><a href="#">Projects</a></li>
   <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><%= link_to "Logout", :logout, method: :post %></li>
 </ul>
+<% end %>
+
+<!-- Nav -->
 
 <nav>
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo"><%= image_tag("Crowdfundr-Logo-Exo") %></a>
+    <a href="/" class="brand-logo">Crowdfundr</a>
+
     <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <% if current_user %>
+
+      <li><a id="browse-projects-link" href="">Browse Projects</a></li>
+        <li><%= link_to "Create a Project", new_project_path %></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Hi, <%= current_user.first_name %>!<i class="material-icons right">arrow_drop_down</i></a></li>
+
+      <% else %>
+        <li><a href="#">Browse Projects</a></li>
+        <li><%= link_to "Register", new_user_path %></li>
+        <li><%= link_to "Log In", :login %></li>
+      <% end %>
+
     </ul>
   </div>
 </nav>
@@ -102,6 +118,6 @@
 
   <p>This app was built by Mike Thai, Arnold Redoblado, and Amin Shaifee</p>
 </footer>
-
+<script src="particles.js"></script>
 </body>
 </html>

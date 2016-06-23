@@ -1,5 +1,6 @@
 body {
-  background-image: url("white-ecailles-1920x1080");
+  // background-image: url("white-ecailles-1920x1080");
+  background-color: #FFF7F0;
   h1, h2, h3, p, article {
     font-family: $neue;
   }
@@ -35,14 +36,15 @@ body {
 .hero {
   $large-screen: 50em default;
   align-items: center;
-  background: url("https://d13yacurqjgara.cloudfront.net/users/20752/screenshots/2098174/attachments/378749/nodes-1.png");
+  background: url("particles-bg.png");
   background-position: right;
   background-size: none;
   display: flex;
   justify-content: center;
   min-height: 25em;
-  padding: 2em;
+  padding: 5em;
   padding-left: 50%;
+  margin-bottom: 3rem;
 
   @include media($large-screen) {
     background-position: left;
@@ -51,9 +53,10 @@ body {
   }
 
   .hero-content {
-    max-width: 19em;
+    max-width: 25em;
     min-height: 500px;
     text-align: center;
+    color: mintcream;
 
     @include media($large-screen) {
       text-align: left;
