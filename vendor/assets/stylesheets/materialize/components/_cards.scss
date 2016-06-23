@@ -37,6 +37,7 @@
     .card-content {
       max-height: 40%;
       overflow: hidden;
+
     }
     .card-action {
       position: absolute;
@@ -83,6 +84,9 @@
       top: 0;
       bottom: 0;
       width: 100%;
+      // min-height: 280px;
+      height: 100%;
+
     }
 
     .card-title {
@@ -98,6 +102,7 @@
   .card-content {
     padding: $card-padding;
     border-radius: 0 0 2px 2px;
+    height: 200px;
 
     p {
       margin: 0;

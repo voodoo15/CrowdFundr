@@ -1,10 +1,14 @@
+// Materialize Nav
+
 nav {
   color: $navbar-font-color;
   @extend .z-depth-1;
   background-color: $primary-color;
   width: 100%;
   height: $navbar-height-mobile;
-  line-height: $navbar-height-mobile;
+  line-height: 100px;
+  min-height: 100px;
+  border-bottom: 15px ridge rgba(240, 255, 255, 0.8);
 
   a { color: $navbar-font-color; }
 
@@ -45,6 +49,8 @@ nav {
   // Logo
   .brand-logo {
     position: absolute;
+    left: 2%;
+    // top: 14%;
     color: $navbar-font-color;
     display: inline-block;
     font-size: $navbar-brand-font-size;
@@ -83,9 +89,6 @@ nav {
       float: left;
       margin-right: 15px;
     }
-  }
-  .brand-logo > img {
-    max-height: 100%;
   }
 
 
@@ -161,25 +164,5 @@ nav {
         transform: translateY(0);
       }
     }
-  }
-}
-
-// Fixed Navbar
-.navbar-fixed {
-  position: relative;
-  height: $navbar-height-mobile;
-  z-index: 998;
-
-  nav {
-    position: fixed;
-  }
-}
-@media #{$medium-and-up} {
-  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: $navbar-height;
-    line-height: $navbar-height;
-  }
-  .navbar-fixed {
-    height: $navbar-height;
   }
 }
