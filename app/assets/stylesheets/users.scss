@@ -1,6 +1,4 @@
 @import "bourbon";
-@import "table-grid-settings";
-@import "neat";
 
 $neue: "Helvetica Neue", Sans Serif;
 
@@ -9,7 +7,7 @@ body {
 }
 
 h1, h2, h3, p, article aside {
-  font-family: $neue;
+  // font-family: $neue;
 }
 
 .container {
@@ -91,4 +89,15 @@ $flashes: (
   aside {
     margin: 1.5rem 0 1rem 0;
   }
+}
+
+// Profile
+
+#profile-page {
+margin-top: 10%;
+}
+
+.profile-page-heading {
+  margin-bottom: 15%;
+  font-size: 2rem;
 }

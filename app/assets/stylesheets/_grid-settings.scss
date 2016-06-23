@@ -1,8 +1,9 @@
 @import "bourbon";
-// $visual-grid: true;
-// $visual-grid-color: yellow !default;
+@import "neat";
+$visual-grid: true;
+$visual-grid-color: yellow !default;
 $visual-grid-opacity: 0.4 !default;
 
 $column: 150px;
 $gutter: 10px;
-$max-width: 80%;
+$max-width: 90%;

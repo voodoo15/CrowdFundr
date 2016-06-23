@@ -15,9 +15,8 @@
 
 <div class="choose-category">
   <h1>What Type of Project Would You Like to Create?</h1>
-  <div class="field">
-    Category<br/>
-    <%= f.select :category_id, options_for_select(Category.all.collect {|c| [ c.description, c.id ] }) %>
+  <div id="category-picker">
+    <%= select_tag :category_id, options_for_select(Category.all.collect {|c| [ c.description, c.id ] }) %>
   </div>
 </div>
 

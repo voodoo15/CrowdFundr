@@ -1,6 +1,4 @@
-<button>
-  <%= link_to "Back to All Projects", request.referer.present? ? request.referer : root_path %>
-</button>
+<%= link_to "Back to All Projects", request.referer.present? ? request.referer : root_path, class: "waves-effect waves-teal btn-flat", id: "back-to-all-projects-btn" %>
 
 <div class="container">
 
