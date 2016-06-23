@@ -41,4 +41,12 @@ $(document).on('ready page:load', function() {
         $.getScript('/projects?search=' + searchValue);
     });
   });
+
+  $("#browse-projects-link").click(function(){
+    $("#projects").ScrollTo({
+      duration: 2000,
+      easing: 'swing'
+    });
+  });
+
 });
