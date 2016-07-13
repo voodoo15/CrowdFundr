@@ -1,21 +1,22 @@
 <div class="container pledges">
-  <h1>Back a Project</h1>
+  <h1>Pledge to Project</h1>
   <h2>
-    How much would you like to pledge to the project, "<%= @project.title %>"?
+    How much would you like to pledge to the project, <h2 id="title">"<%= @project.title %>"</h2>?
   </h2>
 
   <%  @project.rewards.each do |r| %>
     <table id="reward">
-      <tr><th>Reward:</th><td><%= r.title %></td></br><tr>
-      <tr><th>Description:</th>  <td><%= r.description %></td></br><tr>
-      <tr><th>Pledge Amount:</th>  <td><%= number_to_currency(r.amount) %></td></br><tr>
-
+      <tr><th>Reward:</th><td><%= r.title %></td></br></tr>
+      <tr><th>Description:</th>  <td><%= r.description %></td></br></tr>
+      <tr><th>Pledge Amount:</th>  <td><%= number_to_currency(r.amount) %></td></br></tr>
+      <tr>
     <% if current_user %>
         <%= form_for [@project, @pledge] do |f| %>
           <%= f.hidden_field :amount, :value => r.amount %>
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <%= f.hidden_field :reward_id, :value => r.id %>
-          <td><%= f.submit %></td>
+          <td colspan="2"><%= f.submit %></td>
+        </tr>
         <% end %>
       <% else %>
       <p>

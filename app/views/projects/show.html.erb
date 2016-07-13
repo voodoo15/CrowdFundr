@@ -1,4 +1,4 @@
-<%= link_to "Back to All Projects", request.referer.present? ? request.referer : root_path, class: "waves-effect waves-teal btn-flat", id: "back-to-all-projects-btn" %>
+<%= link_to "Back to All Projects", root_path, class: "waves-effect waves-teal btn-flat", id: "back-to-all-projects-btn" %>
 
 <div class="container">
 
@@ -16,7 +16,8 @@
           <div class="video">
             <div class="video-wrapper">
             <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/gKUI--Tycg8?list=FL-nhrSdZC6vefG4VmW5NR8Q" frameborder="0" allowfullscreen></iframe> -->
-            <%= image_tag @project.image %>
+            <!-- <%= image_tag @project.image %> -->
+            <img src="http://i.ytimg.com/vi/Q4StEidEyBs/maxresdefault.jpg">
             </div>
           </div>
         </td>
@@ -25,17 +26,17 @@
         <table class="project-stats">
           <tr>
         <td id="backers">
-          <p>Number of Backers: <%= @project.count_backers %></p>
+          <p><strong>Number of Backers: </strong><%= @project.count_backers %></p>
         </td>
         </tr>
         <tr>
             <td id="pledged">
-          <p>Amount Pledged: <%= number_to_currency(@project.amount_pledged) %></p>
+          <p><strong>Amount Pledged:</strong> <%= number_to_currency(@project.amount_pledged) %></p>
         </td>
       </tr>
       <tr>
         <td id="days-to-go">
-          <p>Days To Go: <%= @project.days_remaining %></p>
+          <p><strong>Days To Go:</strong> <%= @project.days_remaining %></p>
         </td>
       </tr>
       <tr>
@@ -55,12 +56,10 @@
     </table>
   </table>
 </div>
-    <div class="short-description">
-      <h2><%= @project.short_description %></h2>
-    </div>
 
   <div class="long-description">
-    <h3><%= @project.long_description %></h3>
+    <h3>The story:</h3>
+    <h4><%= @project.long_description %></h4>
   </div>
 
   <div class="show-rewards">

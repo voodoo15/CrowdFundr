@@ -3,7 +3,7 @@
     <h1 style="text-align: center; margin-bottom: 4rem">Profile</h1>
     <div class="row">
       <div class="col s6">
-      <h1 class="profile-page-heading">Contact Information</h1>
+      <h1 class="profile-page-heading">Contact Information:</h1>
         <p>
           Email Address: <%= @user.email %>
         </p>
@@ -33,7 +33,7 @@
       </div>
         <div class="col s6">
           <% if @user.projects.any? %>
-            <h1 class="profile-page-heading">Projects Owned</h1>
+            <h1 class="profile-page-heading">Projects Owned:</h1>
 
             <% @user.projects.each do |p| %>
               <div>
@@ -45,13 +45,13 @@
         </div>
 
         <div class="col s12">
-          <h1 class="profile-page-heading">Backed Projects</h1>
+          <h1 class="profile-page-heading">Rewards Received:</h1>
             <% if @user.rewards.any? %>
 
             <% @user.rewards.each do |r| %>
 
-                title:  <%= r.title %><br/>
-                description:  <%= r.description %><br/>
+                Title:  <%= r.title %><br/>
+                Description:  <%= r.description %><br/><br/><br/>
 
             <% end %>
           <% end %>
