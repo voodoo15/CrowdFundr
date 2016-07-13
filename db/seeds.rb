@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 categories = [
   "Art",
   "Technology",
@@ -45,7 +37,7 @@ end
   )
 #
   Project.create!(
-    title:  "Help fund my record!",
+    title:  "Help Fund My Record!",
     short_description:  "My recording studio got robbed and now all my gear is gone. Please send me some $ so I can buy new gear and finish my record!",
     long_description:  "Don't you hate when people break into your place and steal all of your most expensive things and material you've been working on for many years? Me too. That's why you should send me some contributions so I can replace all of my stolen items and then treat myself on a nice vacation so that I can forget the terrible injustice that has been done to me. In fact, I might just spend all the money on my vacation and maybe I'll be inspired to write totally new material to share with you. It's a win-win, right?? ",
     risk_description:  "Possibility of damage to the shipped games and possible slippage of delivery date",
