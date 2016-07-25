@@ -111,6 +111,7 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -174,7 +175,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.11)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -208,6 +208,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick (~> 4.3)
   neat
+  pg
   pry-byebug
   pry-rails
   puma
@@ -216,7 +217,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sorcery (~> 0.9.1)
   spring
-  sqlite3
   timeliness (~> 0.3.8)
   turbolinks
   uglifier (>= 1.3.0)
